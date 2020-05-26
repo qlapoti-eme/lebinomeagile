@@ -13,6 +13,7 @@ class ProposalsController < ApplicationController
   end
 
   def create
+    authorize @proposal
     @proposal = Proposal.new(proposal_params)
     if @proposal.save!
       redirect_to root_path

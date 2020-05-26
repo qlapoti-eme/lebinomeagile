@@ -1,9 +1,16 @@
 <h1>Mon titre</h1>
 
 <% @proposals.each do |proposal| %>
+  <% if policy(proposal).edit? %>
+    <%= link_to "Update", edit_proposal_path(proposal) %>
+  <% end %>
+<% end %>
+
+<% @proposals.each do |proposal| %>
   <ul>
     <li>
       <%= proposal.name%>
     </li>
   </ul>
 <% end %>
+
