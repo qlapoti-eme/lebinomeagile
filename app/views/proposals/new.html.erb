@@ -1,0 +1,10 @@
+
+
+  <%= simple_form_for @proposal do |c| %>
+    <%= c.input :name %>
+    <%= c.input :start_time %>
+    <%= c.input :end_time %>
+    <%= c.input :description %>
+    <%= c.button :submit, class: 'btn btn-primary' %>
+
+  <% end %>
