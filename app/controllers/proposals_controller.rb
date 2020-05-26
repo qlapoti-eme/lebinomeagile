@@ -2,7 +2,7 @@ class ProposalsController < ApplicationController
   before_action :find_proposal, only: [:destroy, :update, :show]
 
   def index
-    @proposals = Proposal.all
+    @proposals = policy_scope(Proposal).order(created_at: :desc)
   end
 
   def show
@@ -13,6 +13,7 @@ class ProposalsController < ApplicationController
   end
 
   def create
+    authorize @proposal
     @proposal = Proposal.new(proposal_params)
     if @proposal.save!
       redirect_to root_path
@@ -22,6 +23,7 @@ class ProposalsController < ApplicationController
   end
 
   def update
+    authorize @proposal
     if @proposal.update(proposal_params)
       redirect_to root_path
     else
@@ -31,8 +33,9 @@ class ProposalsController < ApplicationController
   end
 
   def destroy
-     @proposal.destroy
-     redirect_to proposals_path
+    authorize @proposal
+    @proposal.destroy
+    redirect_to proposals_path
   end
 
 
