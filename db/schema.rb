@@ -10,10 +10,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_25_155721) do
+ActiveRecord::Schema.define(version: 2020_05_26_101134) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.string "reservation_status"
+    t.string "url_room"
+    t.integer "chatroom"
+    t.bigint "user_id", null: false
+    t.bigint "proposal_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["proposal_id"], name: "index_bookings_on_proposal_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "primary_categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "proposals", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "start_time"
+    t.string "end_time"
+    t.string "reservation_status"
+    t.bigint "user_id", null: false
+    t.bigint "secondary_category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["secondary_category_id"], name: "index_proposals_on_secondary_category_id"
+    t.index ["user_id"], name: "index_proposals_on_user_id"
+  end
+
+  create_table "secondary_categories", force: :cascade do |t|
+    t.string "name"
+    t.bigint "primary_category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["primary_category_id"], name: "index_secondary_categories_on_primary_category_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +67,9 @@ ActiveRecord::Schema.define(version: 2020_05_25_155721) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "proposals"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "proposals", "secondary_categories"
+  add_foreign_key "proposals", "users"
+  add_foreign_key "secondary_categories", "primary_categories"
 end

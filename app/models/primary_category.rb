@@ -1,0 +1,2 @@
+class PrimaryCategory < ApplicationRecord
+end
