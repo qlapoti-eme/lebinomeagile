@@ -1,4 +1,6 @@
-
+<% if policy(Restaurant).create? %>
+  <%= link_to "Nouvelle proposition", new_proposition_path %>
+<% end %>
 
   <%= simple_form_for @proposal do |c| %>
     <%= c.input :name %>
