@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   # index.html.erb
   def index
-    @bookings = Booking.all
+    @bookings = policy_scope(Booking).order(created_at: :desc)
   end
   
   def new
@@ -10,6 +10,7 @@ class BookingsController < ApplicationController
   end
 
   def create
+    authorize @booking
     @proposal = Proposal.new(booking_params)
     @booking.user = current_user
     @booking.proposal = Proposal.find(params[:proposal_id])
