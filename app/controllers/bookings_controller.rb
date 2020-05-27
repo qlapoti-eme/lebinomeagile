@@ -5,15 +5,16 @@ class BookingsController < ApplicationController
   end
   
   def new
-    @proposal = Proposal.find(params[:proposal_id])
     @booking = Booking.new
+    authorize @booking
+    @proposal = Proposal.find(params[:proposal_id])
   end
 
   def create
+    @booking = Booking.new(booking_params)
+    @booking.booker = current_user
+    # @booking.proposal = Proposal.find(params[:proposal_id])
     authorize @booking
-    @proposal = Proposal.new(booking_params)
-    @booking.user = current_user
-    @booking.proposal = Proposal.find(params[:proposal_id])
     if @booking.save
       flash[:notice] = "Booking done !"
       redirect_to root_path
@@ -25,6 +26,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:reservation_status, :url_room, :chatroom, :user, :proposal)
+    params.require(:booking).permit(:reservation_status, :url_room, :chatroom, :user, :proposal_id)
   end
 end
