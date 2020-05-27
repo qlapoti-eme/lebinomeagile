@@ -4,3 +4,8 @@
   text-align: justify;
   margin-top: 50px;
 }
+
+.content-wrapper {
+  min-height: calc(100vh - 70px - 80px);
+  position: relative;
+}
