@@ -11,11 +11,13 @@ class ProposalsController < ApplicationController
 
   def new
     @proposal = Proposal.new
+    @categories = PrimaryCategory.all
+    authorize @proposal
   end
 
   def create
-    authorize @proposal
     @proposal = Proposal.new(proposal_params)
+    authorize @proposal
     if @proposal.save!
       redirect_to root_path
     else

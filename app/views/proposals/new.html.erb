@@ -1,12 +1,22 @@
-<% if policy(Restaurant).create? %>
-  <%= link_to "Nouvelle proposition", new_proposition_path %>
-<% end %>
-
-  <%= simple_form_for @proposal do |c| %>
-    <%= c.input :name %>
-    <%= c.input :start_time %>
-    <%= c.input :end_time %>
-    <%= c.input :description %>
-    <%= c.button :submit, class: 'btn btn-primary' %>
-
+<div class = "container">
+  <% if policy(Proposal).create? %>
+    <%= simple_form_for @proposal do |c| %>
+      <%= c.input :name %>
+      <%= c.input :primary_category, as: :radio_buttons, collection: @categories.pluck(:name), wrapper: :vertical_collection_inline, class: 'main_categories'  %>
+      <div class="d-none secondary-input" id="soutien-scolaire">
+        <%= c.input :secondary_category, as: :radio_buttons, collection: @categories.first.secondary_categories, wrapper: :vertical_collection_inline %>
+      </div>
+      <div class="d-none secondary-input" id="moment-loisir">
+        <%= c.input :secondary_category, as: :radio_buttons, collection: @categories.second.secondary_categories, wrapper: :vertical_collection_inline %>
+      </div>
+      <div class="d-none secondary-input" id="conseils">
+        <%= c.input :secondary_category, as: :radio_buttons, collection: @categories.third.secondary_categories, wrapper: :vertical_collection_inline %>
+      </div>
+      <%= c.input :start_time %>
+      <%= c.input :end_time %>
+      <%= c.input :description, as: :text %>
+      <%= c.button :submit, class: 'btn btn-primary' %>
+    <% end %>
   <% end %>
+</div>
+
