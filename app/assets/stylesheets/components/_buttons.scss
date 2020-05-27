@@ -4,11 +4,12 @@
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
-  opacity: 0.6;
+  opacity: 1;
   transition: opacity 0.3s ease;
-  background-color: #FFDD67;
+  background-color: white;
 }
 
 .btn-primary:hover {
   opacity: 1;
+  color: #B31B34;
 }
