@@ -1,0 +1,10 @@
+<h1>Vos bookings</h1>
+
+<ul>
+  <% @bookings.each do |booking| %>
+  <li><%= booking.proposal.name %></li>
+  <li><%= booking.proposal.primary_category.name %></li>
+  <li><%= booking.proposal.secondary_category.name %></li>
+  <br>
+  <% end %>
+</ul>
