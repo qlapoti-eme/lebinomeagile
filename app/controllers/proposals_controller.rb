@@ -1,5 +1,6 @@
 class ProposalsController < ApplicationController
   before_action :find_proposal, only: [:destroy, :update, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @proposals = policy_scope(Proposal).order(created_at: :desc)
