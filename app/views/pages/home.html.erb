@@ -1,3 +1,51 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%= link_to "Découvrir", proposals_path, class: "btn btn-primary"  %>
+
+<div class="banner">
+
+   <div class="container">
+
+      <div class="banner-content">
+        <h1>Les Binômes</h1>
+        <p>Rester solidaire <br> en temps de distanciation sociale</p>
+      </div>
+
+  </div>
+
+</div>
+
+<div class="container">
+
+  <div class="home_text">
+    La distanciation sociale ne devrait pas être un frein à <strong>l'entraide</strong>.<br><br>C'est pourquoi nous mettons un <strong>outil de communication digital</strong> au service d'un <strong>réseaux de bonnes volontés</strong>.
+    <br><br><strong>Aide aux devoirs</strong>, envie de partager un <strong>moment d'échange</strong>ou des <strong>conseils</strong>, tout peut se faire à distance!
+  </div>
+
+
+       <div class="card-primary-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path "soutien_scolaire.jpg" %>)">
+         <div class="card-body text-center">
+          <%=  link_to "Soutien scolaire", proposals_path %>
+        </div>
+      </div>
+
+
+      <div class="card-primary-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path "loisirs.jpg" %>)">
+         <div class="card-body text-center">
+           <%=  link_to "Moment loisirs", proposals_path %>
+        </div>
+      </div>
+
+      <div class="card-primary-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path "conseils.jpg" %>)">
+         <div class="card-body text-center">
+          <%=  link_to "Conseils", proposals_path %>
+        </div>
+      </div>
+
+</div>
+
+
+
+
+
+
+
+
+
