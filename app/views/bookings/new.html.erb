@@ -1,7 +1,6 @@
 <h1>Vos bookings</h1>
 
 <%= simple_form_for [@proposal, @booking] do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
+  <%= f.association :proposal, selected: @proposal %>
   <%= f.submit "Submit", class: "btn btn-cta" %>
 <% end %>
