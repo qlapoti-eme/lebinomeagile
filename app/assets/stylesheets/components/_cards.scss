@@ -15,7 +15,7 @@
   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))
 }
 
-.card-primary-category :hover {
+.card-primary-category:hover {
   color: my-grey;
 }
 
@@ -24,13 +24,92 @@
 }
 
 .card-index {
+  width: 305px;
+  height: 410px;
+  background-color: #F4F4F4;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  overflow: hidden;
+  position: relative;
+}
 
+
+.card-index img {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
 }
 
 .card-index-name {
+  margin-top: 60px;
+  align-item: left;
+  margin-left: 5px;
+  font-weight: bold;
+}
 
+.card-index:hover {
+  img {
+   height: 100px;
+  }
+  .card-index-name {
+    margin-top: 10px;
+    position: absolute;
+    text-align: center;
+  }
+  .card-index-secondary-category {
+    display: none;
+  }
+  .card-index-description {
+    display: block;
+    padding: 30px 10px;
+    margin-top: 30px;
+  }
+  .btn-index-card {
+  opacity: 1;
+  color: #444444;
+  border-color: #444444;
+  display: block;
+  }
+  .btn-index-card:hover {
+  opacity: 1;
+  color: #B31B34;
+  border-color: #B31B34;
+  display: block;
+  text-decoration: none;
+  }
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
 }
 
 .card-index-secondary-category {
-
+text-align: right;
+font-style: italic;
+margin-right: 7px;
+font-size: 12px;
+display: block;
 }
+
+.card-index-description {
+  display: none;
+}
+
+
+.btn-index-card {
+  width: 100px;
+  color: #444444;
+  border: 1px solid #4A4A4A;
+  border-color: #444444;
+  padding: 5px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  background-color: white;
+  text-align: center;
+  margin-left: 200px;
+  display: none;
+  margin-top: 100px;
+}
+
+
+
+
