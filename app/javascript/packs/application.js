@@ -24,6 +24,8 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import "../plugins/flatpickr"
+require("flatpickr/dist/themes/dark.css")
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
