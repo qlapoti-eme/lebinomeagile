@@ -4,7 +4,10 @@ class ProposalsController < ApplicationController
 
   def index
     @proposals = policy_scope(Proposal).order(created_at: :desc)
-    # on doit recevoir > param[:cat]
+    if params[:cat]
+      @proposals = @proposals.select { |proposal| proposal.primary_category.id == params[:cat].to_i }
+    end
+    @categories = PrimaryCategory.all
   end
 
   def show

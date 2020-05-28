@@ -1,15 +1,24 @@
-<h1>Mon titre</h1>
 
-<ul>
-  <% @proposals.each do |proposal| %>
-    <li>
-      <%= proposal.name%>
-      <% if policy(proposal).edit? %>
-        - <%= link_to "Update", edit_proposal_path(proposal) %>
-      <% end %>
-      <% if policy(proposal).destroy? %>
-        - <%= link_to "Delete", proposal_path(proposal), method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer votre proposition?' } %>
-      <% end %>
-    </li>
+
+<div class="container">
+
+  <% @categories.each do |cat|  %>
+    <%= link_to cat.name, proposals_path(:cat => cat.id), {class: "btn btn-primary"} %>
   <% end %>
-</ul>
+  <%= link_to "Annuler le filtre", proposals_path, {class: "btn btn-primary"} %>
+
+  <ul>
+    <% @proposals.each do |proposal| %>
+      <li>
+        <%= proposal.name%>
+        <% if policy(proposal).edit? %>
+          - <%= link_to "Update", edit_proposal_path(proposal) %>
+        <% end %>
+        <% if policy(proposal).destroy? %>
+          - <%= link_to "Delete", proposal_path(proposal), method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer votre proposition?' } %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+  
+</div>
