@@ -33,20 +33,20 @@ img2 = "secondaire.jpg"
 img3 = "lycée.jpg"
 img4 = "culinaire.jpg"
 img5 = "littéraire.jpg"
+img6 = "musical.jpg"
 img7 = "diy.jpg"
-img4 = "culinaire.jpg"
 img8 = "bricolage.jpg"
 img9 = "botanique.jpg"
 img10 = "coaching.jpg"
 secondary_category1 = SecondaryCategory.create!( name:"primaire" , primary_category: primary_category1, image: img1)
 secondary_category2 = SecondaryCategory.create!( name:"secondaire" , primary_category: primary_category1, image: img2)
 secondary_category3 = SecondaryCategory.create!( name:"lycée" , primary_category: primary_category1, image: img3)
-secondary_category4 = SecondaryCategory.create!( name:"culinaire", primary_category: primary_category2, image: img)
+secondary_category4 = SecondaryCategory.create!( name:"culinaire", primary_category: primary_category2, image: img4)
 secondary_category5 = SecondaryCategory.create!( name:"littéraire" , primary_category: primary_category2, image: img5)
 secondary_category6 = SecondaryCategory.create!( name:"musical" , primary_category: primary_category2, image: img6)
 secondary_category7 = SecondaryCategory.create!( name:"bricolage" , primary_category: primary_category2, image: img7)
 secondary_category8 = SecondaryCategory.create!( name:"bricolage" , primary_category: primary_category3, image: img8)
-secondary_category9 = SecondaryCategory.create!( name:"botanique" , primary_category: primary_category, image: img9)
+secondary_category9 = SecondaryCategory.create!( name:"botanique" , primary_category: primary_category3, image: img9)
 secondary_category10 = SecondaryCategory.create!( name:"coaching personnel" , primary_category: primary_category3, image: img10)
 
 puts "Creating proposals..."
