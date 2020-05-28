@@ -1,15 +1,27 @@
-<h1>Mon titre</h1>
+<div class="container">
 
-<ul>
-  <% @proposals.each do |proposal| %>
-    <li>
-      <%= proposal.name%>
-      <% if policy(proposal).edit? %>
-        - <%= link_to "Update", edit_proposal_path(proposal) %>
+  <h1>Trouvez votre coup de pouce!</h1>
+
+  <div class="cards-wrapper">
+
+    <% @proposals.each do |proposal| %>
+
+      <div class="card-index">
+        <%= image_tag proposal.primary_category.image, alt:"image catégorie" %>
+        <div class="card-index-secondary-category">
+          <%= proposal.secondary_category%>
+        </div>
+        <div class="card-index-name">
+          <%= proposal.name%>
+        </div>
+
+       </div>
+
       <% end %>
-      <% if policy(proposal).destroy? %>
-        - <%= link_to "Delete", proposal_path(proposal), method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer votre proposition?' } %>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
+
+
+  </div>
+
+</div>
+
+

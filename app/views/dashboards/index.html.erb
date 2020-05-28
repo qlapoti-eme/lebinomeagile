@@ -9,3 +9,11 @@
   <br>
   <% end %>
 </ul>
+
+
+ <% if policy(proposal).edit? %>
+            - <%= link_to "Update", edit_proposal_path(proposal) %>
+          <% end %>
+          <% if policy(proposal).destroy? %>
+            - <%= link_to "Delete", proposal_path(proposal), method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer votre proposition?' } %>
+          <% end %>
