@@ -20,9 +20,12 @@ user2 = User.create!( email: "yoann@gmail.com", password: 'azerty')
 user3 = User.create!( email: "fred@gmail.com", password: 'azerty')
 
 puts "Creating Primary Categories..."
-primary_category1 = PrimaryCategory.create!( name: "Soutien scolaire")
-primary_category2 = PrimaryCategory.create!( name: "Moment loisir")
-primary_category3 = PrimaryCategory.create!( name: "Conseils")
+img1 = "soutien_scolaire.jpg"
+img2 = "loisirs.jpg"
+img3 = "conseils.jpg"
+primary_category1 = PrimaryCategory.create!( name: "Soutien scolaire", image: img1)
+primary_category2 = PrimaryCategory.create!( name: "Moment loisir", image: img2)
+primary_category3 = PrimaryCategory.create!( name: "Conseils", image: img3)
 
 puts "Creating Secondary Categories..."
 secondary_category1 = SecondaryCategory.create!( name:"primaire" , primary_category: primary_category1)
