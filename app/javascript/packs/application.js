@@ -29,8 +29,12 @@ require("flatpickr/dist/themes/dark.css")
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { initFormProposal } from '../components/secondary_category_form.js';
+import { initSecondaryOptions } from '../components/secondary_category_form.js';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  initFormProposal();
+  initSecondaryOptions();
 });

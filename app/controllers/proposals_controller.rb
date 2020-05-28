@@ -12,13 +12,17 @@ class ProposalsController < ApplicationController
 
   def new
     @proposal = Proposal.new
+    @categories = PrimaryCategory.all
+    authorize @proposal
   end
 
   def create
-    authorize @proposal
     @proposal = Proposal.new(proposal_params)
+    @proposal.secondary_category = SecondaryCategory.find(params[:proposal][:secondary_category])
+    @proposal.proposer = current_user
+    authorize @proposal
     if @proposal.save!
-      redirect_to root_path
+      redirect_to proposals_path
     else
       render 'new'
     end
