@@ -28,7 +28,10 @@ primary_category2 = PrimaryCategory.create!( name: "Moment loisir", image: img2)
 primary_category3 = PrimaryCategory.create!( name: "Conseils", image: img3)
 
 puts "Creating Secondary Categories..."
-secondary_category1 = SecondaryCategory.create!( name:"primaire" , primary_category: primary_category1)
+img1 = "soutien_scolaire.jpg"
+img2 = "loisirs.jpg"
+img3 = "conseils.jpg"
+secondary_category1 = SecondaryCategory.create!( name:"primaire" , primary_category: primary_category1, image: )
 secondary_category2 = SecondaryCategory.create!( name:"secondaire" , primary_category: primary_category1)
 secondary_category3 = SecondaryCategory.create!( name:"lycée" , primary_category: primary_category1)
 secondary_category4 = SecondaryCategory.create!( name:"culinaire", primary_category: primary_category2)
@@ -40,11 +43,11 @@ secondary_category9 = SecondaryCategory.create!( name:"botanique" , primary_cate
 secondary_category10 = SecondaryCategory.create!( name:"coaching personnel" , primary_category: primary_category3)
 
 puts "Creating proposals..."
-proposal1 = Proposal.create!( name: "Aide cours", description: "Je peux aider des enfants à l'école primaire à faire leurs devoirs", proposer: user1, secondary_category: secondary_category1 , start_time: "lundi 10h", end_time: "lundi 12h" )
+proposal1 = Proposal.create!( name: "Aide aux devoirs", description: "Je peux aider des enfants à l'école primaire à faire leurs devoirs", proposer: user1, secondary_category: secondary_category1 , start_time: "lundi 10h", end_time: "lundi 12h" )
 proposal2 = Proposal.create!( name: "Faire de la musique ensemble", description: "Dispo pour jouer un peu de guitare avec quelqu'un", proposer: user2, secondary_category: secondary_category6, start_time: "mardi 18h", end_time: "mardi 19h" )
-proposal3 = Proposal.create!( name: "Cuisiner", description: "Je cuisine tous les soirs vers 19h si quelqu'un veut cuisiner avec moi via zoom!", proposer: user3, secondary_category: secondary_category4, start_time: "tous les jours 19h", end_time: "tous les jours 20h" )
+proposal3 = Proposal.create!( name: "Partager mes meileures recettes", description: "Je cuisine tous les soirs vers 19h si quelqu'un veut cuisiner avec moi via zoom!", proposer: user3, secondary_category: secondary_category4, start_time: "tous les jours 19h", end_time: "tous les jours 20h" )
 proposal4 = Proposal.create!( name: "Aider des enfants", description: "Institutrice à la retraite peut aider à faire les devoirs", proposer: user2, secondary_category: secondary_category1, start_time: "mercredi 14h", end_time: "mercredi 16h" )
-proposal5 = Proposal.create!( name: "Jardinage", description: "Passionnée de jardinage, je peux donner des petits conseils botaniques", proposer: user3, secondary_category: secondary_category9, start_time: "dimanche 10h", end_time: "dimanche 12h" )
+proposal5 = Proposal.create!( name: "Conseils jardinage", description: "Passionnée de jardinage, je peux donner des petits conseils botaniques", proposer: user3, secondary_category: secondary_category9, start_time: "dimanche 10h", end_time: "dimanche 12h" )
 
 puts "Creating bookings..."
 booking1 = Booking.create!( reservation_status: "pending", url_room: "google.com", chatroom: 12, booker: user1, proposal: proposal5 )
