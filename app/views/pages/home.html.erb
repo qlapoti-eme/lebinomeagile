@@ -21,28 +21,17 @@
     <strong>Tout peut se faire à distance</strong>!
   </div>
 
-
-       <div class="card-primary-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path "soutien_scolaire.jpg" %>)">
-         <div class="card-body text-center">
-          <%=  link_to "Soutien scolaire", proposals_path %>
+  <div class="home_text">
+    <% @categories.each do |category| %>
+      <div class="card-primary-category" style="background-image: url('<%= image_path category.image %>')">
+        <div class="card-body text-center">
+          <%=  link_to category.name, proposals_path(:cat => category.id) %>
         </div>
       </div>
-
-
-      <div class="card-primary-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path "loisirs.jpg" %>)">
-         <div class="card-body text-center">
-           <%=  link_to "Moment loisirs", proposals_path %>
-        </div>
-      </div>
-
-      <div class="card-primary-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path "conseils.jpg" %>)">
-         <div class="card-body text-center">
-          <%=  link_to "Conseils", proposals_path %>
-        </div>
-      </div>
+    <% end %>
+  </div>
 
 </div>
-
 
 
 
