@@ -1,18 +1,24 @@
 .card-primary-category {
-  background-size: cover;
-  background-position: center;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-color: #B31B34;
   display: flex;
-  height: 200px;
-  justify-content: center;
+  height: 180px;
+  justify-content: space-around;
   align-items: center;
   color: white;
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
+  border-radius: 20px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-top: 80px;
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.05)),
+}
+
+.category-name {
+  margin-left: 180px;
 }
 
 .card-primary-category:hover {
