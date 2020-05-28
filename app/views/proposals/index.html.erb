@@ -3,6 +3,14 @@
   <h1>Trouvez votre coup de pouce!</h1>
 
   <div class="row">
+    <% @categories.each do |cat|  %>
+      <%= link_to cat.name, proposals_path(:cat => cat.id), {class: "btn btn-primary"} %>
+    <% end %>
+    <%= link_to "Annuler le filtre", proposals_path, {class: "btn btn-primary"} %>
+  </div>
+
+
+  <div class="row">
 
     <% @proposals.each do |proposal| %>
       <div class="col-3 m-4">
