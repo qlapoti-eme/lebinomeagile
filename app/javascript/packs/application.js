@@ -35,6 +35,8 @@ import { initSecondaryOptions } from '../components/secondary_category_form.js';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  initFormProposal();
+  if (document.querySelector('.proposal_primary_category')) {
+    initFormProposal();
+  }
   initSecondaryOptions();
 });

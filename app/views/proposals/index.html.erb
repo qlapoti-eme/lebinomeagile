@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<div class="container">
+  
+  <h1>Trouvez votre coup de pouce!</h1>
+=======
 
 <div class="title-wrapper">
   <div class="container">
@@ -6,12 +11,15 @@
 </div>
 
 <div class="container">
+>>>>>>> master
 
-  <div class="row">
+  <div class="text-center">
     <% @categories.each do |cat|  %>
-      <%= link_to cat.name, proposals_path(:cat => cat.id), {class: "btn btn-primary"} %>
+      <%= link_to cat.name, proposals_path(:cat => cat.id), class: "btn btn-primary #{params[:cat].to_i == cat.id ? "active" : ""}" %>
+
     <% end %>
-    <%= link_to "Annuler le filtre", proposals_path, {class: "btn btn-primary"} %>
+
+    <%= link_to "Annuler le filtre", proposals_path, {class: "btn btn-primary ml-5", id: "btn-reset"} %>
   </div>
 
   <div class="row">
