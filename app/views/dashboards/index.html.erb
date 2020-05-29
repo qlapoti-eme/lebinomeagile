@@ -1,4 +1,33 @@
-<h2>Mes réservations</h2>
+<div class="title-wrapper">
+  <div class="container">
+    <h1 class="title">Mon activité</h1>
+  </div>
+</div>
+
+
+<div class="container">
+  <h3>Mes réservations</h3>
+
+<div class="row">
+
+    <% @bookings.each do |booking| %>
+      <div class="col-3 m-4">
+
+        <div class="card-dashboard-bookings">
+          <%= image_tag booking.proposal.secondary_category.image, alt:"image catégorie" %>
+          <div class="card-dashboard-bookings-secondary-category">
+            <p>
+            <%= booking.proposal.primary_category.name%> -
+            <%= booking.proposal.secondary_category.name%>
+            </p>
+          </div>
+          <div class="card-dashboard-bookings-name">
+            <%= booking.proposal.name%>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 
 <ul>
   <% @bookings.each do |booking| %>
@@ -13,17 +42,32 @@
 
 <h2>Mes proposals</h2>
 
-<ul>
-  <% @proposals.each do |proposal| %>
-    <li>
-      <%= proposal.name%>
-      <% if policy(proposal).edit? %>
-        - <%= link_to "Update", edit_proposal_path(proposal) %>
-      <% end %>
-      <% if policy(proposal).destroy? %>
-        - <%= link_to "Delete", proposal_path(proposal), method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer votre proposition?' } %>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
+  <div class="row">
 
+    <% @proposals.each do |proposal| %>
+      <div class="col-3 m-4">
+
+        <div class="card-dashboard-proposals">
+          <%= image_tag proposal.secondary_category.image, alt:"image catégorie" %>
+          <div class="card-dashboard-proposals-secondary-category">
+            <p>
+            <%= proposal.primary_category.name%> -
+            <%= proposal.secondary_category.name%>
+            </p>
+          </div>
+          <div class="card-dashboard-proposals-name">
+            <%= proposal.name%>
+          </div>
+          <div class="card-delete-update-dashboard">
+            <% if policy(proposal).destroy? %>
+              <%= link_to "Supprimer", proposal_path(proposal), method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer votre proposition?' },class: "btn" %>
+            <% end %>
+            <% if policy(proposal).edit? %>
+              <%= link_to "Modifier", edit_proposal_path(proposal), class: "btn" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
