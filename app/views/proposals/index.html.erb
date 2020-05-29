@@ -30,7 +30,7 @@
             <%= proposal.description%>
           </div>
           <!-- <div class="button btn-index-card">Réservez</div> -->
-          <a class="button btn-index-card" href="/proposals">Réservez</a>
+          <%= link_to "Réservez", new_proposal_booking_path(proposal.id), class: 'button btn-index-card' %>
         </div>
       </div>
     <% end %>
