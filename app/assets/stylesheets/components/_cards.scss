@@ -76,6 +76,7 @@
   border-color: #444444;
   display: block;
   }
+
   .btn-index-card:hover {
   opacity: 1;
   color: #B31B34;
@@ -83,6 +84,7 @@
   display: block;
   text-decoration: none;
   }
+
   box-shadow: 0 0 20px rgba(0,0,0,0.2);
 }
 
@@ -117,6 +119,33 @@ display: block;
   margin-top: 100px;
 }
 
+.card-dashboard-proposals {
+  width: 305px;
+  height: 410px;
+  background-color: #F4F4F4;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  overflow: hidden;
+  position: relative;
+}
 
 
+.card-dashboard-proposals-secondary-category {
+text-align: right;
+font-style: italic;
+margin-right: 7px;
+font-size: 12px;
+display: block;
+}
 
+.card-dashboard-proposals-name {
+  margin-left: 5px;
+  position: absolute;
+  bottom: 40px;
+}
+
+.card-delete-update-dashboard {
+  position: relative;
+  top: 10px;
+  text-align: center;
+}
