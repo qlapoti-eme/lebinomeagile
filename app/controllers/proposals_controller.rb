@@ -3,7 +3,7 @@ class ProposalsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    # @proposals = Proposal.all
+    @booking=Booking.new
     @proposals = policy_scope(Proposal).order(created_at: :desc)
     if params[:cat]
       @proposals = @proposals.select { |proposal| proposal.primary_category.id == params[:cat].to_i }

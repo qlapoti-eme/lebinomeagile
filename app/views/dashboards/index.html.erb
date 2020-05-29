@@ -29,19 +29,6 @@
     <% end %>
   </div>
 
-<ul>
-  <% @bookings.each do |booking| %>
-  <li>
-    <%= booking.proposal.name %> - avec <%= booking.proposal.proposer.email %>
-    <i><%= booking.proposal.start_time %></i> sur
-    <a href= <%= booking.url_room %> ><i> mon lien Zoom ici </i></a>
-  </li>
-  <br>
-  <% end %>
-</ul>
-
-<h2>Mes proposals</h2>
-
   <div class="row">
 
     <% @proposals.each do |proposal| %>

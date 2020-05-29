@@ -7,19 +7,18 @@
 
 <div class="container">
 
-  <div class="row">
+  <div class="text-left ml-4">
     <% @categories.each do |cat|  %>
-      <%= link_to cat.name, proposals_path(:cat => cat.id), {class: "btn btn-primary"} %>
+      <%= link_to cat.name, proposals_path(:cat => cat.id), class: "btn btn-primary #{params[:cat].to_i == cat.id ? "active" : ""}" %>
+
     <% end %>
-    <%= link_to "Annuler le filtre", proposals_path, {class: "btn btn-primary"} %>
+
+    <%= link_to "Annuler le filtre", proposals_path, {class: "btn btn-primary ml-5", id: "btn-reset"} %>
   </div>
 
-
   <div class="row">
-
     <% @proposals.each do |proposal| %>
       <div class="col-3 m-4">
-
         <div class="card-index">
           <%= image_tag proposal.secondary_category.image, alt:"image catégorie" %>
           <div class="card-index-secondary-category">
@@ -34,10 +33,10 @@
           <div class="card-index-description">
             <%= proposal.description%>
           </div>
-         <!--  <%#= link_to "Réservez", new_proposal_booking_path(proposal.id), class: 'button btn-index-card' %> -->
-          <a class="button btn-index-card" href="/proposals">Disponibilités</a>
+          <a class="button btn-index-card" data-toggle="modal" data-target="#modalCenter<%= proposal.id %>" href="/proposals">Disponibilités</a>
         </div>
       </div>
+      <%= render 'modal', proposal: proposal %>
     <% end %>
   </div>
 </div>
