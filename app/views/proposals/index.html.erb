@@ -14,12 +14,9 @@
     <%= link_to "Annuler le filtre", proposals_path, {class: "btn btn-primary"} %>
   </div>
 
-
   <div class="row">
-
     <% @proposals.each do |proposal| %>
       <div class="col-3 m-4">
-
         <div class="card-index">
           <%= image_tag proposal.secondary_category.image, alt:"image catégorie" %>
           <div class="card-index-secondary-category">
@@ -35,9 +32,10 @@
             <%= proposal.description%>
           </div>
           <!-- <div class="button btn-index-card">Réservez</div> -->
-          <a class="button btn-index-card" href="/proposals">Disponibilités</a>
+          <a class="button btn-index-card" data-toggle="modal" data-target="#modalCenter<%= proposal.id %>" href="/proposals">Disponibilités</a>
         </div>
       </div>
+      <%= render 'modal', proposal: proposal %>
     <% end %>
   </div>
 </div>
