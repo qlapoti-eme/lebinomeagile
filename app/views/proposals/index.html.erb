@@ -1,6 +1,11 @@
-<div class="container">
 
-  <h1>Trouvez votre coup de pouce!</h1>
+<div class="title-wrapper">
+  <div class="container">
+    <h1 class="title">Trouvez votre coup de pouce!</h1>
+  </div>
+</div>
+
+<div class="container">
 
   <div class="row">
     <% @categories.each do |cat|  %>
@@ -16,7 +21,7 @@
       <div class="col-3 m-4">
 
         <div class="card-index">
-          <%= image_tag proposal.secondary_category.primary_category.image, alt:"image catégorie" %>
+          <%= image_tag proposal.secondary_category.image, alt:"image catégorie" %>
           <div class="card-index-secondary-category">
             <p>
             <%= proposal.primary_category.name%> -
@@ -29,8 +34,8 @@
           <div class="card-index-description">
             <%= proposal.description%>
           </div>
-          <!-- <div class="button btn-index-card">Réservez</div> -->
-          <%= link_to "Réservez", new_proposal_booking_path(proposal.id), class: 'button btn-index-card' %>
+         <!--  <%=# link_to "Réservez", new_proposal_booking_path(proposal.id), class: 'button btn-index-card' %> -->
+          <a class="button btn-index-card" href="/proposals">Disponibilités</a>
         </div>
       </div>
     <% end %>
