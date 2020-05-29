@@ -17,9 +17,19 @@
 #btn-reset {
   opacity: 1;
   color: #B31B34;
-} 
+}
 
 #btn-query:active {
   opacity: 1;
   color: #B31B34;
-} 
+}
+
+.btn {
+  color: #444444;
+  text-decoration: none
+}
+
+.btn:hover {
+  color: #B31B34;
+  text-decoration: none
+}

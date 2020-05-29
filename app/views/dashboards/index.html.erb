@@ -1,29 +1,37 @@
-<h2>Mes réservations</h2>
+<div class="title-wrapper">
+  <div class="container">
+    <h1 class="title">Mes réservations</h1>
+  </div>
+</div>
 
-<ul>
-  <% @bookings.each do |booking| %>
-  <li>
-    <%= booking.proposal.name %> - avec <%= booking.proposal.proposer.email %>
-    <i><%= booking.proposal.start_time %></i> sur
-    <a href= <%= booking.url_room %> ><i> mon lien Zoom ici </i></a>
-  </li>
-  <br>
-  <% end %>
-</ul>
+<div class="container">
 
-<h2>Mes proposals</h2>
+  <div>
+    <% @bookings.each do |booking| %>
+    <div>
+      <%= booking.proposal.name %> - avec <%= booking.proposal.proposer.email %>
+      <i><%= booking.proposal.start_time %></i> sur
+      <a class="btn" href= <%= booking.url_room %> ><i> mon lien Zoom ici </i></a>
+    </div>
+    <br>
+    <% end %>
+  </div>
 
-<ul>
-  <% @proposals.each do |proposal| %>
-    <li>
-      <%= proposal.name%>
-      <% if policy(proposal).edit? %>
-        - <%= link_to "Update", edit_proposal_path(proposal) %>
-      <% end %>
-      <% if policy(proposal).destroy? %>
-        - <%= link_to "Delete", proposal_path(proposal), method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer votre proposition?' } %>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
+  <h2>Mes proposals</h2>
+
+  <div>
+    <% @proposals.each do |proposal| %>
+      <div>
+        <%= proposal.name%>
+        <% if policy(proposal).edit? %>
+          - <%= link_to "Update", edit_proposal_path(proposal), class:"btn" %>
+        <% end %>
+        <% if policy(proposal).destroy? %>
+          - <%= link_to "Delete", proposal_path(proposal), method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer votre proposition?' }, class:"btn" %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+</div>
 
