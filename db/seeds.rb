@@ -73,7 +73,7 @@ proposal11 = Proposal.create!( name: "Atelier récupération palettes", descript
 proposal12 = Proposal.create!( name: "Tiramisu à l'italienne", description: "Je viens de l'italie, j'aime la couisine della nonna", proposer: user1, secondary_category: secondary_category4, start_time: "2020-06-01 13:00", end_time: "2020-06-01 14:00" )
 proposal13 = Proposal.create!( name: "Discussions Espagnol / Français", description: "Hola ! Je vous propose de discuter ensemble 30 minutes en français puis en espagnol", proposer: user1, secondary_category: secondary_category7, start_time: "2020-06-01 13:00", end_time: "2020-06-01 15:00" )
 
-# 2eme salve 
+# 2eme salve
 # CONSEILS . bricolage . botanique . coaching personnel | secondary_category8 . secondary_category9 . secondary_category10
 name_conseil_01 = "Démonter son micro-onde"
 description_conseil_01 = "Que faut-il savoir avant de vous lancez dans la réparation de votre micro-onde?"
@@ -111,6 +111,19 @@ proposal_conseil_04 = Proposal.create!( name: name_conseil_04, description: desc
 proposal_conseil_02 = Proposal.create!( name: name_conseil_02, description: description_conseil_02, proposer: user2, secondary_category: secondary_category8, start_time: start_conseil_02, end_time: end_conseil_02 )
 proposal_conseil_03 = Proposal.create!( name: name_conseil_03, description: description_conseil_03, proposer: user3, secondary_category: secondary_category9, start_time: start_conseil_03, end_time: end_conseil_03 )
 proposal_conseil_05 = Proposal.create!( name: name_conseil_05, description: description_conseil_05, proposer: user2, secondary_category: secondary_category10, start_time: start_conseil_05, end_time: end_conseil_05 )
+
+# 3eme salve
+# SOUTIEN SCOLAIRE . primaire . secondaire . lycée | primary_category1 | secondary_category1 . secondary_category2 . secondary_category3
+proposal14 = Proposal.create!( name: "Atelier lecture", description: "Bonjour, je peux lire des histoires à des enfants pour décharger un peu les parents en télétravail...", proposer: user1, secondary_category: secondary_category1 , start_time: "2020-05-30 14:00", end_time: "2020-05-30 16:00" )
+proposal15 = Proposal.create!( name: "Devoirs école", description: "N'hésitez pas à me contacter pour aider vos enfants à faire leurs devoirs!", proposer: user1, secondary_category: secondary_category1 , start_time: "2020-05-30 14:00", end_time: "2020-05-30 18:00" )
+proposal6 = Proposal.create!( name: "préparation au brevet", description: "Bonjour, je fais réviser le brevet à mon fils aîné, nous pouvons le réviser avec un autre collégien :)", proposer: user1, secondary_category: secondary_category2 , start_time: "2020-05-30 17:00", end_time: "2020-05-30 19:00" )
+proposal17 = Proposal.create!( name: "Aide physique - chimie", description: "Hello, je suis étudiante en école d'ingé, je peux aider des collégiens avec leurs devoirs de physique-chimie!", proposer: user2, secondary_category: secondary_category2 , start_time: "2020-05-30 18:00", end_time: "2020-05-30 20:00" )
+proposal18 = Proposal.create!( name: "Histoire", description: "Passionné d'histoire, peut faire réviser desc cours!", proposer: user2, secondary_category: secondary_category2 , start_time: "2020-05-30 8:00", end_time: "2020-05-30 10:00" )
+proposal19 = Proposal.create!( name: "Prépa bac français", description: "Bonjour, je prépare le Capes en lettres, et propose d'aider des lycéens en pleine préparation du bac de français.", proposer: user2, secondary_category: secondary_category3 , start_time: "2020-05-30 13:00", end_time: "2020-05-30 14:00" )
+proposal20 = Proposal.create!( name: "Latin - Grec", description: "Aide en version et en thème ;)", proposer: user3, secondary_category: secondary_category3 , start_time: "2020-05-30 11:00", end_time: "2020-05-30 13:00" )
+proposal21 = Proposal.create!( name: "Anglais", description: "English native speaker would be happy to share some time helping young students!", proposer: user3, secondary_category: secondary_category3 , start_time: "2020-05-30 17:00", end_time: "2020-05-30 20:00" )
+
+
 
 puts "Creating bookings..."
 booking1 = Booking.create!( reservation_status: "pending", url_room: "google.com", chatroom: 12, booker: user1, proposal: proposal5 )
