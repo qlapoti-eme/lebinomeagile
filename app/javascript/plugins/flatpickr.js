@@ -4,8 +4,7 @@ import { French } from "flatpickr/dist/l10n/fr.js"
 // https://flatpickr.js.org/localization/
 const flatpickerInit = () => {
   
-  flatpickr(".datetimepicker", { 
-    enableTime: true,
+  flatpickr(".datepicker", { 
     "locale": French,
     altInput: true,
     altFormat: "j F, Y",
@@ -18,9 +17,7 @@ const flatpickerInit = () => {
     noCalendar: true,
     dateFormat: "H:i",
     defaultDate: "10:00",
-    mode: "range",
     time_24hr: true,
-    minTime: "10:00",
   });
 }  
 
