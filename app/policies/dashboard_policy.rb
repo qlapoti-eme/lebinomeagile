@@ -4,5 +4,5 @@ class DashboardPolicy < ApplicationPolicy
       scope.all
     end
   end
-  
+
 end

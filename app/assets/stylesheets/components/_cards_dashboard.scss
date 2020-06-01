@@ -1,0 +1,99 @@
+/////// NAV ONGLETS ///////
+
+.nav-item a {
+  color: #797991;
+  text-decoration: none;
+}
+
+.nav-item a:hover {
+  color: #B31B34;
+  text-decoration: none;
+  border: none;
+}
+
+
+.nav-tabs .nav-link.active {
+  color: #B31B34;
+  text-decoration: none;
+}
+
+
+//////// BOOKINGS //////////
+
+.card-dashboard-bookings {
+  width: 305px;
+  height: 410px;
+  background-color: #F4F4F4;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.card-dashboard-bookings img {
+  object-fit: cover;
+  object-position: center;
+  // overflow: hidden;
+  width: 305px;
+  height: 35%;
+}
+
+.card-dashboard-bookings-categories {
+  text-align: right;
+  font-style: italic;
+  margin-right: 7px;
+  font-size: 12px;
+  display: block;
+}
+
+.card-dashboard-bookings-name {
+  margin-left: 5px;
+  position: absolute;
+}
+
+#date-time {
+  font-size: 12px;
+  margin-bottom: 0px;
+}
+
+//////// PROPOSALS  //////////
+
+.card-dashboard-proposals {
+  width: 305px;
+  height: 410px;
+  background-color: #F4F4F4;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.card-dashboard-proposals img {
+  object-fit: cover;
+  object-position: center;
+  // overflow: hidden;
+  width: 305px;
+  height: 35%;
+}
+
+
+.card-dashboard-proposals-secondary-category {
+  text-align: right;
+  font-style: italic;
+  margin-right: 7px;
+  font-size: 12px;
+  display: block;
+}
+
+.card-dashboard-proposals-name {
+  margin-left: 5px;
+  position: absolute;
+}
+
+.card-delete-update-dashboard {
+  position: absolute;
+  bottom: 10px;
+  left: center;
+  text-align: center;
+}
+
+
+
