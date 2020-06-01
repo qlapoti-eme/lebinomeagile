@@ -12,7 +12,9 @@ PrimaryCategory.destroy_all
 Proposal.destroy_all
 Booking.destroy_all
 
-
+# SOUTIEN SCOLAIRE . primaire . secondaire . lycée
+# MOMENT LOISIR . culinaire . littéraire . musical . linguistique
+# CONSEILS . bricolage . botanique . coaching personnel
 
 puts "Creating users..."
 user1 = User.create!( email: "emarie1@gmail.com", password: '123456')
@@ -38,17 +40,24 @@ img7 = "diy.jpg"
 img8 = "bricolage.jpg"
 img9 = "botanique.jpg"
 img10 = "coaching.jpg"
+
+# SOUTIEN SCOLAIRE . primaire . secondaire . lycée
 secondary_category1 = SecondaryCategory.create!( name:"primaire" , primary_category: primary_category1, image: img1)
 secondary_category2 = SecondaryCategory.create!( name:"secondaire" , primary_category: primary_category1, image: img2)
 secondary_category3 = SecondaryCategory.create!( name:"lycée" , primary_category: primary_category1, image: img3)
+
+# MOMENT LOISIR . culinaire . littéraire . musical . linguistique
 secondary_category4 = SecondaryCategory.create!( name:"culinaire", primary_category: primary_category2, image: img4)
 secondary_category5 = SecondaryCategory.create!( name:"littéraire" , primary_category: primary_category2, image: img5)
 secondary_category6 = SecondaryCategory.create!( name:"musical" , primary_category: primary_category2, image: img6)
 secondary_category7 = SecondaryCategory.create!( name:"linguistique" , primary_category: primary_category2, image: img7)
+
+# CONSEILS . bricolage . botanique . coaching personnel
 secondary_category8 = SecondaryCategory.create!( name:"bricolage" , primary_category: primary_category3, image: img8)
 secondary_category9 = SecondaryCategory.create!( name:"botanique" , primary_category: primary_category3, image: img9)
 secondary_category10 = SecondaryCategory.create!( name:"coaching personnel" , primary_category: primary_category3, image: img10)
 
+# 1ere salve toutes catégories
 puts "Creating proposals..."
 proposal1 = Proposal.create!( name: "Aide aux devoirs", description: "Je peux aider des collégiens à faire leurs devoirs", proposer: user1, secondary_category: secondary_category2 , start_time: "2020-05-30 13:00", end_time: "2020-05-30 14:00" )
 proposal2 = Proposal.create!( name: "Faire de la musique ensemble", description: "Dispo pour jouer un peu de guitare avec quelqu'un", proposer: user2, secondary_category: secondary_category6, start_time: "2020-06-01 13:00", end_time: "2020-06-01 14:00" )
@@ -64,6 +73,44 @@ proposal11 = Proposal.create!( name: "Atelier récupération palettes", descript
 proposal12 = Proposal.create!( name: "Tiramisu à l'italienne", description: "Je viens de l'italie, j'aime la couisine della nonna", proposer: user1, secondary_category: secondary_category4, start_time: "2020-06-01 13:00", end_time: "2020-06-01 14:00" )
 proposal13 = Proposal.create!( name: "Discussions Espagnol / Français", description: "Hola ! Je vous propose de discuter ensemble 30 minutes en français puis en espagnol", proposer: user1, secondary_category: secondary_category7, start_time: "2020-06-01 13:00", end_time: "2020-06-01 15:00" )
 
+# 2eme salve 
+# CONSEILS . bricolage . botanique . coaching personnel | secondary_category8 . secondary_category9 . secondary_category10
+name_conseil_01 = "Démonter son micro-onde"
+description_conseil_01 = "Que faut-il savoir avant de vous lancez dans la réparation de votre micro-onde?"
+start_conseil_01 = "2020-05-01 13:00"
+end_conseil_01 = "2020-05-01 14:00"
+
+name_conseil_02 = "Vidanger sa voiture"
+description_conseil_02 = "Comment être efficace: choix de l'huile, recyclage de l'huile usager."
+start_conseil_02 = "2020-06-08 13:00"
+end_conseil_02 = "2020-06-08 14:00"
+
+name_conseil_03 = "Tailler ses rosiers"
+description_conseil_03 = "Pour avoir de belles roses chaque année, suivez moi dans la préparation des rosiers!"
+start_conseil_03 = "2020-04-01 13:00"
+end_conseil_03 = "2020-04-01 14:00"
+
+name_conseil_04 = "Tailler ses pommiers"
+description_conseil_04 = "Les pommiers sont trés résistants! La taille est trés simple, quels sont les bons gestes?"
+start_conseil_04 = "2020-06-09 13:00"
+end_conseil_04= "2020-06-09 14:00"
+
+name_conseil_05 = "What color is your parachute?"
+description_conseil_05 = "Ancier DRH, je vous propose de discuter de vos projets de reconversion!"
+start_conseil_05= "2020-05-20 13:00"
+end_conseil_05 = "2020-05-20 14:00"
+
+name_conseil_06 = "Devenir néo-paysan"
+description_conseil_06 = "J'ai fait mon retour à la nature en famille il y a 1 an, je vous propose de partager cette expérience!"
+start_conseil_06 = "2020-06-07 13:00"
+end_conseil_06= "2020-06-07 14:00"
+
+proposal_conseil_01 = Proposal.create!( name: name_conseil_01, description: description_conseil_01, proposer: user1, secondary_category: secondary_category8, start_time: start_conseil_01, end_time: end_conseil_01 )
+proposal_conseil_06 = Proposal.create!( name: name_conseil_06, description: description_conseil_06, proposer: user3, secondary_category: secondary_category10, start_time: start_conseil_06, end_time: end_conseil_06 )
+proposal_conseil_04 = Proposal.create!( name: name_conseil_04, description: description_conseil_04, proposer: user1, secondary_category: secondary_category9, start_time: start_conseil_04, end_time: end_conseil_04 )
+proposal_conseil_02 = Proposal.create!( name: name_conseil_02, description: description_conseil_02, proposer: user2, secondary_category: secondary_category8, start_time: start_conseil_02, end_time: end_conseil_02 )
+proposal_conseil_03 = Proposal.create!( name: name_conseil_03, description: description_conseil_03, proposer: user3, secondary_category: secondary_category9, start_time: start_conseil_03, end_time: end_conseil_03 )
+proposal_conseil_05 = Proposal.create!( name: name_conseil_05, description: description_conseil_05, proposer: user2, secondary_category: secondary_category10, start_time: start_conseil_05, end_time: end_conseil_05 )
 
 puts "Creating bookings..."
 booking1 = Booking.create!( reservation_status: "pending", url_room: "google.com", chatroom: 12, booker: user1, proposal: proposal5 )
