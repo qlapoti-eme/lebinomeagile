@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_29_124446) do
+ActiveRecord::Schema.define(version: 2020_06_01_145621) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2020_05_29_124446) do
     t.bigint "proposal_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "start_time"
     t.index ["proposal_id"], name: "index_bookings_on_proposal_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -37,9 +38,6 @@ ActiveRecord::Schema.define(version: 2020_05_29_124446) do
   create_table "proposals", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.string "start_time"
-    t.string "end_time"
-    t.string "reservation_status"
     t.bigint "user_id", null: false
     t.bigint "secondary_category_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -55,6 +53,14 @@ ActiveRecord::Schema.define(version: 2020_05_29_124446) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "image"
     t.index ["primary_category_id"], name: "index_secondary_categories_on_primary_category_id"
+  end
+
+  create_table "slots", force: :cascade do |t|
+    t.datetime "start_time"
+    t.bigint "proposal_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["proposal_id"], name: "index_slots_on_proposal_id"
   end
 
   create_table "users", force: :cascade do |t|
