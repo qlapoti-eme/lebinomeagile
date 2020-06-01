@@ -23,8 +23,8 @@
       <div class="d-none">
         <%= c.input :secondary_category %>
       </div>
-      <%= c.input :start_time, input_html: { class: "datetimepicker" }, label: "Début de votre disponibilité" %>
-      <%= c.input :end_time, input_html: { class: "datetimepicker"}, label: "Fin de votre disponibilité"  %>
+      <%= c.input :start_time, input_html: { class: "datetimepicker" }, label: "Jours de disponibilités" %>
+      <%= c.input :end_time, input_html: { class: "timepicker"}, label: "Heures de disponibilité"  %>
       <%= c.input :description, as: :text, placeholder: "Pendant cette heure, je vous propose de cuisiner la recette de lasage de ma grand mère ... " %>
       <%= c.button :submit, class: 'btn btn-primary' %>
     <% end %>
