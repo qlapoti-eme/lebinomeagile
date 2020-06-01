@@ -26,7 +26,7 @@ class ProposalsController < ApplicationController
     @proposal.proposer = current_user
     authorize @proposal
     if @proposal.save!
-      redirect_to proposals_path
+      redirect_to dashboards_path
     else
       render 'new'
     end
@@ -37,7 +37,7 @@ class ProposalsController < ApplicationController
     if @proposal.update(proposal_params)
       redirect_to root_path
     else
-      redirect_to root_path
+      redirect_to dashboards_path
     end
 
   end
@@ -45,7 +45,7 @@ class ProposalsController < ApplicationController
   def destroy
     authorize @proposal
     @proposal.destroy
-    redirect_to proposals_path
+    redirect_to dashboards_path
   end
 
 
