@@ -6,10 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "Cleaning database..."
-User.destroy_all
+puts "secondary_category destroy"
 SecondaryCategory.destroy_all
+puts "primary_category destroy"
 PrimaryCategory.destroy_all
+puts "user destroy"
+User.destroy_all
+puts "proposal destroy"
 Proposal.destroy_all
+puts "booking destroy"
 Booking.destroy_all
 
 # SOUTIEN SCOLAIRE . primaire . secondaire . lycée
