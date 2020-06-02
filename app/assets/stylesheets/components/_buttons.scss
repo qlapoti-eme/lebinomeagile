@@ -34,4 +34,17 @@
   text-decoration: none
 }
 
+.cross {
+  font-size: 22px;
+  margin-right: 20px;
+  position: absolute;
+  right: 280px;
+  top: 155px;
+  color:$my-grey;
+}
+
+.cross:hover {
+  color:$my-red;
+}
+
 
