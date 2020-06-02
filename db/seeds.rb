@@ -39,7 +39,7 @@ primary_category3 = PrimaryCategory.create!( name: "Conseils", image: img3)
 puts "Creating Secondary Categories..."
 img1 = "primaire.jpg"
 img2 = "secondaire.jpg"
-img3 = "lycée.jpg"
+img3 = "lycee.jpg"
 img4 = "culinaire.jpg"
 img5 = "littéraire.jpg"
 img6 = "musical.jpg"
