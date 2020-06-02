@@ -8,11 +8,11 @@
   <div class = "container col-4">
     <% if policy(Proposal).create? %>
 
-      
+
       <%= simple_form_for @proposal do |c| %>
         <%= c.input :name, placeholder: "Cuisiner des lasagnes", label: "Titre"%>
         <%= c.input :primary_category, as: :radio_buttons, collection: @categories.pluck(:name), wrapper: :vertical_collection_inline, label: "Thématique principale" %>
-        
+
         <%= simple_fields_for :secondary_options do |f|  %>
           <div class="d-none secondary-input" id="soutien-scolaire">
             <%= f.input :secondary, as: :radio_buttons, collection: @categories.first.secondary_categories, wrapper: :vertical_collection_inline, label: "Précisez l'activité" %>
@@ -24,7 +24,7 @@
             <%= f.input :secondary, as: :radio_buttons, collection: @categories.third.secondary_categories, wrapper: :vertical_collection_inline, label: "Précisez l'activité" %>
           </div>
         <% end %>
-        
+
         <div class="d-none">
           <%= c.input :secondary_category %>
         </div>

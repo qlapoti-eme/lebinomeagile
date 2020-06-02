@@ -36,7 +36,7 @@
           <a class="button btn-index-card" data-toggle="modal" data-target="#modalCenter<%= proposal.id %>" href="/proposals">Disponibilités</a>
         </div>
       </div>
-      <%= render 'modal', proposal: proposal %>
+      <%= render 'modal', proposal: proposal, booking: @booking %>
     <% end %>
   </div>
 </div>

@@ -2,8 +2,6 @@ const setSecondaryOptions = (event) => {
   document.querySelector("#proposal_secondary_category").value = event.target.value
 }
 
-
-
 const toggleInput = (event) => {
   const primary = document.querySelector(`#${event.target.value.toLowerCase().replace(" ", "-")}`);
   document.querySelectorAll(".secondary-input").forEach((input) => {

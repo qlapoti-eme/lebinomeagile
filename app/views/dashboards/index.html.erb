@@ -29,7 +29,7 @@
               </div>
               <div class="card-dashboard-bookings-name">
                 <b><%= booking.proposal.name %></b><br>
-                <p id="date-time"> <i> Lundi 23 Juin à 18h </i> <br><p>
+                <p id="date-time"> <i><%= booking.start_time %></i> <br><p>
                 Avec <i><%= booking.proposer.email %></i> -
                 <a href= <%= booking.url_room %> > Zoom </a>
               </div>

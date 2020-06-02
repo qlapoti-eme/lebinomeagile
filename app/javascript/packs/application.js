@@ -31,6 +31,7 @@ require("flatpickr/dist/themes/dark.css")
 import { initFormProposal } from '../components/secondary_category_form.js';
 import { initSecondaryOptions } from '../components/secondary_category_form.js';
 import { flatpickerInit } from '../plugins/flatpickr';
+import { initFormBooking } from '../components/create_booking.js';
 
 // pour forcer le rechargement du js quand la page est chargée par turbolinks
 document.addEventListener('turbolinks:load', () => {
@@ -41,4 +42,5 @@ document.addEventListener('turbolinks:load', () => {
   }
   flatpickerInit();
   initSecondaryOptions();
+  initFormBooking();
 });

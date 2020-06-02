@@ -22,5 +22,10 @@ module Lebinomeagile
     # the framework and any gems in your application.
     # config.time_zone = 'Paris'
     # config.active_record.default_timezone = :local
+
+    # Quand tu gères la timezone de ton user -> local
+    # Quand tu veux pas gérer les timezones mais que c’est international -> utc
+    # Quand tu veux pas gérer les timezones mais que c’est prévu pour un lieu précis -> “Europe/Paris”
+
   end
 end
