@@ -5,5 +5,5 @@ class Proposal < ApplicationRecord
   has_one :booking, dependent: :destroy
   has_many :slots, dependent: :destroy
   # Pour simple_form #new
-  # attr_accessor :primary_category
+  attr_accessor :dates, :start_slot, :end_slot
 end
