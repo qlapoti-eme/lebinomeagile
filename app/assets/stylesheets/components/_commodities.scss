@@ -4,7 +4,10 @@
   text-align: justify;
   margin-top: 50px;
   color: #444444;
-}
+  a:hover {
+  text-decoration: none;
+   }
+  }
 
 .content-wrapper {
   min-height: calc(100vh - 70px - 80px);

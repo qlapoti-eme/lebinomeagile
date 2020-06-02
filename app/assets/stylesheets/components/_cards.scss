@@ -21,8 +21,10 @@
   margin-left: 180px;
 }
 
+
 .card-primary-category:hover {
   color: my-grey;
+  font-size: 30px;
 }
 
 .cards-wrapper {
@@ -56,11 +58,13 @@
 .card-index:hover {
   img {
    height: 100px;
+   transition: ease 1s;
   }
   .card-index-name {
     margin-top: 10px;
     position: absolute;
     text-align: center;
+    transition: ease 1s;
   }
   .card-index-secondary-category {
     display: none;
@@ -69,6 +73,7 @@
     display: block;
     padding: 30px 10px;
     margin-top: 30px;
+    transition: ease 1s;
   }
 
  .btn-index-card {
@@ -77,6 +82,7 @@
   border-color: #444444;
   display: block;
   position: absolute;
+  transition: ease 1s;
   }
 
   .btn-index-card:hover {
