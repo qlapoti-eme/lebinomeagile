@@ -10,57 +10,75 @@
       <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Mes réservations</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Mon propositions de coups de pouces</a>
+      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Mes propositions de coups de pouce</a>
     </li>
   </ul>
 
-  <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-      <div class="row">
-        <% @bookings.each do |booking| %>
-          <div class="col-3 m-4">
-            <div class="card-dashboard-bookings">
-              <%= image_tag booking.proposal.secondary_category.image, alt:"image catégorie" %>
-              <div class="card-dashboard-bookings-categories">
-                <p>
-                <%= booking.proposal.primary_category.name%>
-                <%= booking.proposal.secondary_category.name%>
-                </p>
-              </div>
-              <div class="card-dashboard-bookings-name">
-                <b><%= booking.proposal.name %></b><br>
-                <p id="date-time"> <i> Lundi 23 Juin à 18h </i> <br><p>
-                Avec <i><%= booking.proposer.email %></i> -
-                <a href= <%= booking.url_room %> > Zoom </a>
-              </div>
+
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="row">
+              <% @bookings.each do |booking| %>
+                <div class="col-3 m-4">
+                  <div class="card-dashboard-bookings">
+                    <%= image_tag booking.proposal.secondary_category.image, alt:"image catégorie" %>
+                    <div class="card-dashboard-bookings-categories">
+                      <p>
+                      <%= booking.proposal.primary_category.name%>
+                      <%= booking.proposal.secondary_category.name%>
+                      </p>
+                    </div>
+                    <div class="card-dashboard-bookings-name">
+                      <b><%= booking.proposal.name %></b><br>
+                      <p id="date-time"> <i class="far fa-clock icon-red"> Le lundi de 16h à 18h</i> <br>
+                      <i class="far fa-user-circle icon-red"> <%= booking.proposer.email %></i> <br>
+                      <%= link_to booking.url_room do %>
+                        <i class="fas fa-link icon-red"> Votre lien zoom</i> <br>
+                      <% end %>
+                      <div class="update-delete">
+                        <%= link_to proposal_booking_path(booking, booking.proposal), method: :delete, data:{ confirm: 'Etes vous sûr de vouloir supprimer votre réservation?' } do %>
+                          <i class="fas fa-trash delete-booking"></i>
+                      <% end %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
             </div>
           </div>
-        <% end %>
-      </div>
-    </div>
+
 
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
       <div class="row">
         <% @proposals.each do |proposal| %>
           <div class="col-3 m-4">
-            <div class="card-dashboard-proposals">
+            <div class="card-dashboard-bookings">
               <%= image_tag proposal.secondary_category.image, alt:"image catégorie" %>
-              <div class="card-dashboard-proposals-secondary-category">
+              <div class="card-dashboard-bookings-categories">
                 <p>
                 <%= proposal.primary_category.name%> -
                 <%= proposal.secondary_category.name%>
                 </p>
               </div>
-              <div class="card-dashboard-proposals-name">
-                <b> <%= proposal.name%> </b>
-              </div>
-              <div class="card-delete-update-dashboard">
-                <% if policy(proposal).destroy? %>
-                  <i class="far fa-trash-alt"></i>
-                  <%= link_to "Supprimer", proposal_path(proposal), method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer votre proposition?' },class: "btn" %>
+              <div class="card-dashboard-bookings-name">
+                <b><%= proposal.name %></b><br>
+                <p id="date-time"> <i class="far fa-clock icon-red">  Lundi 23 Juin à 18h </i> <br>
+                <% if proposal.booking.present? %>
+                  <%= link_to proposal.booking.url_room do %>,
+                    <i class="fas fa-link icon-red">Votre lien zoom</i> <br>
+                  <% end %>
                 <% end %>
+              </div>
+              <div class="update-delete">
                 <% if policy(proposal).edit? %>
-                  <%= link_to "Modifier", edit_proposal_path(proposal), class: "btn" %>
+                  <%= link_to edit_proposal_path(proposal), data:{ confirm: 'Etes vous sûr de vouloir modifier votre coup de pouce?' } do %>
+                    <i class="fas fa-pen update"></i>
+                  <% end %>
+                <% end %>
+                <% if policy(proposal).destroy? %>
+                   <%= link_to proposal_path(proposal), method: :delete, data:{ confirm: 'Etes vous sûr de vouloir supprimer votre coup de pouce?' }  do %>
+                      <i class="fas fa-trash delete"></i>
+                    <% end %>
                 <% end %>
               </div>
             </div>
@@ -73,3 +91,5 @@
     </div>
   </div>
 </div>
+
+

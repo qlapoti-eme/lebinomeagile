@@ -27,6 +27,7 @@
   border-radius: 20px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   overflow: hidden;
+  position: relative;
 }
 
 .card-dashboard-bookings img {
@@ -46,14 +47,70 @@
 }
 
 .card-dashboard-bookings-name {
-  margin-left: 5px;
   position: absolute;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  align-item: left;
+  margin-left: 7px;
+  font-weight: bold;
 }
 
 #date-time {
-  font-size: 12px;
-  margin-bottom: 0px;
+  font-size: 15px;
+  margin-bottom: 5px;
+  margin-top: 10px;
 }
+
+.icon-red {
+  color: $my-red;
+}
+
+.update-delete {
+  display: flex;
+}
+
+.update {
+  position: absolute;
+  margin-left: 240px;
+  margin-top: 190px;
+  margin-right: 5px;
+  padding: 5px;
+  color: $my-grey;
+}
+
+.update:hover {
+  color: $my-red;
+}
+
+.delete {
+  position: absolute;
+  margin-left: 265px;
+  margin-top: 190px;
+  margin-right: 5px;
+  padding: 5px;
+  color: $my-grey;
+}
+
+.delete:hover {
+  color: $my-red;
+}
+
+
+.delete-booking {
+  position: absolute;
+  position: absolute;
+  margin-left: 245px;
+  margin-top: 75px;
+  margin-right: 5px;
+  padding: 5px;
+  color: #444444;
+}
+
+.delete-booking:hover {
+  color: $my-red;
+}
+
+
 
 //////// PROPOSALS  //////////
 

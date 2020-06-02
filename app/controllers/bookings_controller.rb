@@ -22,4 +22,11 @@ class BookingsController < ApplicationController
       render :new
     end
   end
+
+  def destroy
+    authorize @booking
+    @booking.destroy
+    redirect_to dashboards_path
+  end
+
 end

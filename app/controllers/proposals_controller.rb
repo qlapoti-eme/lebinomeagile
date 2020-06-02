@@ -1,5 +1,5 @@
 class ProposalsController < ApplicationController
-  before_action :find_proposal, only: [:destroy, :update, :show]
+  before_action :find_proposal, only: [:destroy, :update, :show, :edit]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
@@ -30,6 +30,10 @@ class ProposalsController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def edit
+    authorize @proposal
   end
 
   def update
