@@ -1,0 +1,10 @@
+<%= "SHOW" %>
+<%= @booking.url_room %>
+<div 
+  class="twilio-video" 
+  data-sid="<%= ENV["ACCOUNT_SID"] %>" 
+  data-room="<%= @booking.url_room %>" 
+  data-token="<%= @token %>"
+>
+
+</div>
