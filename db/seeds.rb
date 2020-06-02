@@ -177,6 +177,8 @@ Slot.create!( proposal: proposal17, start_time: DateTime.strptime("06/19/2020 10
 Slot.create!( proposal: proposal18, start_time: DateTime.strptime("06/20/2020 10:00", "%m/%d/%Y %H:%M"))
 Slot.create!( proposal: proposal19, start_time: DateTime.strptime("06/21/2020 10:00", "%m/%d/%Y %H:%M"))
 Slot.create!( proposal: proposal20, start_time: DateTime.strptime("06/22/2020 10:00", "%m/%d/%Y %H:%M"))
+Slot.create!( proposal: proposal21, start_time: DateTime.strptime("06/22/2020 10:00", "%m/%d/%Y %H:%M"))
+
 
 puts "Creating bookings..."
 booking1 = Booking.create!( reservation_status: "pending", url_room: "google.com", chatroom: 12, booker: user1, proposal: proposal5, start_time: DateTime.strptime(proposal5_StarTime1, "%m/%d/%Y %H:%M"))
