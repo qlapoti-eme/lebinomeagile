@@ -10,8 +10,16 @@
       </div>
       <div class="modal-body">
         <p>
-        <strong>Du <%= proposal.start_time %> au
-        <%= proposal.end_time %></strong><br>
+
+
+        <% proposal.slots.each do |slot| %><br>
+          <%= slot.start_time %>
+          
+        <% end %>
+
+        </p>
+
+        <strong>Du <%= proposal.slots.first.start_time %> </strong><br>
         Si ce créneau vous convient, réservez-le :) <br><br>
         Un lien <strong>zoom </strong> vous sera envoyé dans la foulée.<br><br>
         <strong>Bon coup de pouce!</strong>
@@ -19,7 +27,9 @@
       </div>
       <div class="modal-footer">
         <%= link_to "Réservez", proposal_bookings_path(proposal), method: :post, class:"btn btn-primary" %>
+
       </div>
+
     </div>
   </div>
 </div>
