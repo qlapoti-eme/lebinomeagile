@@ -24,6 +24,7 @@ class BookingsController < ApplicationController
     end
   end
 
+<<<<<<< HEAD
   private
 
   def create_room(booking)
@@ -39,6 +40,12 @@ class BookingsController < ApplicationController
     room = @client.video.rooms.create(unique_name: 'DailyStandup')
 
     puts room
+=======
+  def destroy
+    authorize @booking
+    @booking.destroy
+    redirect_to dashboards_path
+>>>>>>> master
   end
 
 end

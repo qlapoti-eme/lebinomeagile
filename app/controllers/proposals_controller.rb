@@ -1,5 +1,5 @@
 class ProposalsController < ApplicationController
-  before_action :find_proposal, only: [:destroy, :update, :show]
+  before_action :find_proposal, only: [:destroy, :update, :show, :edit]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
@@ -32,7 +32,11 @@ class ProposalsController < ApplicationController
       render 'new'
     end
   end
-  
+
+  def edit
+    authorize @proposal
+  end
+
   def update
     authorize @proposal
     if @proposal.update(proposal_params)
@@ -40,26 +44,26 @@ class ProposalsController < ApplicationController
     else
       redirect_to dashboards_path
     end
-    
+
   end
-  
+
   def destroy
     authorize @proposal
     @proposal.destroy
     redirect_to dashboards_path
   end
-  
-  
+
+
   private
-  
+
   def proposal_params
     params.require(:proposal).permit(:name, :description, :end_time, :dates, :start_slot, :end_slot)
   end
-  
+
   def find_proposal
     @proposal = Proposal.find(params[:id])
   end
-  
+
   def create_slots(proposal)
     # recup les dates sous forme de string
     all_dates = proposal_params[:dates].split(',')
@@ -67,7 +71,7 @@ class ProposalsController < ApplicationController
     eslot = proposal_params[:end_slot].split(':').first.to_i
     range_slot = (sslot..eslot-1  )
     all_dates.each do |date|
-        range_slot.each do |slot| 
+        range_slot.each do |slot|
           Slot.create!(start_time: DateTime.parse("#{date} #{slot}"), proposal: proposal)
         end
     end
