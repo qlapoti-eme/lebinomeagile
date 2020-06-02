@@ -17,35 +17,33 @@ class BookingsController < ApplicationController
     authorize @booking
     if @booking.save!
       flash[:notice] = "Booking done !"
-      create_room(@booking)
       redirect_to dashboards_path
     else
       render :new
     end
   end
+  
+  def show
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @token = generate_token(@booking)
+  end
 
-<<<<<<< HEAD
   private
 
-  def create_room(booking)
-    # 
-    # Your Account Sid and Auth Token from twilio.com/console
-    # DANGER! This is insecure. See http://twil.io/secure
-    account_sid = ENV["ACCOUNT_SID"]
-    auth_token = ENV["AUTH_TOKEN"]
-    # Download the helper library from https://www.twilio.com/docs/ruby/install
+  
 
-    @client = Twilio::REST::Client.new(account_sid, auth_token)
-
-    room = @client.video.rooms.create(unique_name: 'DailyStandup')
-
-    puts room
-=======
-  def destroy
-    authorize @booking
-    @booking.destroy
-    redirect_to dashboards_path
->>>>>>> master
+  def generate_token(booking)
+    # Create an Access Token
+    token = Twilio::JWT::AccessToken.new ENV['ACCOUNT_SID'], ENV['KEY_ID'], ENV['AUTH_TOKEN'], [],
+        ttl: 14400,
+        identity: current_user.email
+    # Grant access to Video
+    grant = Twilio::JWT::AccessToken::VideoGrant.new
+    grant.room = booking.url_room
+    token.add_grant grant
+    # Serialize the token as a JWT
+    token.to_jwt
   end
 
 end

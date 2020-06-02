@@ -11,14 +11,11 @@
       <div class="modal-body">
         <p>
 
-
         <% proposal.slots.each do |slot| %><br>
           <%= slot.start_time %>
           <%= link_to "reservation", proposal_bookings_path(proposal), method: :post, style: "color: black;" %>
         <% end %>
-
         </p>
-
         
       </p>
       </div>
