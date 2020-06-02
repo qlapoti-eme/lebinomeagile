@@ -23,11 +23,13 @@
 
   <div class="home_text">
     <% @categories.each do |category| %>
-      <div class="card-primary-category" style="background-image: url('<%= image_path category.image %>')">
-        <div class="category-name">
-          <%=  link_to category.name, proposals_path(:cat => category.id) %>
+      <%=  link_to proposals_path(:cat => category.id) do %>
+        <div class="card-primary-category" style="background-image: url('<%= image_path category.image %>')">
+          <div class="category-name">
+            <p><%= category.name %></p>
+          </div>
         </div>
-      </div>
+     <% end %>
     <% end %>
   </div>
 
