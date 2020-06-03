@@ -30,8 +30,8 @@
                       <b><%= booking.proposal.name %></b><br>
                       <p id="date-time"> <i class="far fa-clock icon-red"> Le lundi de 16h à 18h</i> <br>
                       <i class="far fa-user-circle icon-red"> <%= booking.proposer.email %></i> <br>
-                      <%= link_to booking.url_room do %>
-                        <i class="fas fa-link icon-red"> Votre lien zoom</i> <br>
+                      <%= link_to booking do %>
+                        <i class="fas fa-link icon-red"> voir les details </i> <br>
                       <% end %>
                       <div class="update-delete">
                         <%= link_to proposal_booking_path(booking, booking.proposal), method: :delete, data:{ confirm: 'Etes vous sûr de vouloir supprimer votre réservation?' } do %>

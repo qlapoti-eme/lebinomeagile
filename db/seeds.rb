@@ -7,17 +7,17 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "Cleaning database..."
 puts "secondary_category destroy"
-SecondaryCategory.destroy_all
+Booking.destroy_all
 puts "primary_category destroy"
-PrimaryCategory.destroy_all
 puts "user destroy"
 User.destroy_all
 puts "slot destroy"
 Slot.destroy_all
-puts "proposal destroy"
-Proposal.destroy_all
 puts "booking destroy"
-Booking.destroy_all
+Proposal.destroy_all
+puts "proposal destroy"
+SecondaryCategory.destroy_all
+PrimaryCategory.destroy_all
 
 # SOUTIEN SCOLAIRE . primaire . secondaire . lycée
 # MOMENT LOISIR . culinaire . littéraire . musical . linguistique
@@ -39,7 +39,7 @@ primary_category3 = PrimaryCategory.create!( name: "Conseils", image: img3)
 puts "Creating Secondary Categories..."
 img1 = "primaire.jpg"
 img2 = "secondaire.jpg"
-img3 = "lycée.jpg"
+img3 = "lycee.jpg"
 img4 = "culinaire.jpg"
 img5 = "littéraire.jpg"
 img6 = "musical.jpg"
@@ -51,7 +51,7 @@ img10 = "coaching.jpg"
 # SOUTIEN SCOLAIRE . primaire . secondaire . lycée
 secondary_category1 = SecondaryCategory.create!( name:"primaire" , primary_category: primary_category1, image: img1)
 secondary_category2 = SecondaryCategory.create!( name:"secondaire" , primary_category: primary_category1, image: img2)
-secondary_category3 = SecondaryCategory.create!( name:"lycée" , primary_category: primary_category1, image: img3)
+secondary_category3 = SecondaryCategory.create!( name:"lycee" , primary_category: primary_category1, image: img3)
 
 # MOMENT LOISIR . culinaire . littéraire . musical . linguistique
 secondary_category4 = SecondaryCategory.create!( name:"culinaire", primary_category: primary_category2, image: img4)
@@ -180,9 +180,10 @@ Slot.create!( proposal: proposal20, start_time: DateTime.strptime("06/22/2020 10
 Slot.create!( proposal: proposal21, start_time: DateTime.strptime("06/22/2020 10:00", "%m/%d/%Y %H:%M"))
 
 
+
 puts "Creating bookings..."
-booking1 = Booking.create!( reservation_status: "pending", url_room: "google.com", chatroom: 12, booker: user1, proposal: proposal5, start_time: DateTime.strptime(proposal5_StarTime1, "%m/%d/%Y %H:%M"))
-booking2 = Booking.create!( reservation_status: "booked", url_room: "google.com", chatroom: 3, booker: user2, proposal: proposal3  , start_time: DateTime.strptime(proposal3_StarTime1, "%m/%d/%Y %H:%M"))
-booking3 = Booking.create!( reservation_status: "pending", url_room: "google.com", chatroom: 5, booker: user3, proposal: proposal2 , start_time: DateTime.strptime(proposal2_StarTime1, "%m/%d/%Y %H:%M"))
+booking1 = Booking.create!( reservation_status: "pending", chatroom: 12, booker: user1, proposal: proposal5, start_time: DateTime.strptime(proposal5_StarTime1, "%m/%d/%Y %H:%M"))
+booking2 = Booking.create!( reservation_status: "booked",  chatroom: 3, booker: user2, proposal: proposal3  , start_time: DateTime.strptime(proposal3_StarTime1, "%m/%d/%Y %H:%M"))
+booking3 = Booking.create!( reservation_status: "pending",  chatroom: 5, booker: user3, proposal: proposal2 , start_time: DateTime.strptime(proposal2_StarTime1, "%m/%d/%Y %H:%M"))
 
 puts "Finished!"

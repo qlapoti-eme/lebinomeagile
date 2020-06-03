@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :proposals do
     resources :bookings, only: [:index, :new, :create, :destroy]
   end
+  resources :bookings, only: [:show]
 end

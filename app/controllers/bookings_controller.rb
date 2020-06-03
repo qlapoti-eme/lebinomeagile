@@ -24,11 +24,28 @@ class BookingsController < ApplicationController
       render :new
     end
   end
-
-  def destroy
+  
+  def show
+    @booking = Booking.find(params[:id])
     authorize @booking
-    @booking.destroy
-    redirect_to dashboards_path
+    @token = generate_token(@booking)
+  end
+
+  private
+
+  
+
+  def generate_token(booking)
+    # Create an Access Token
+    token = Twilio::JWT::AccessToken.new ENV['ACCOUNT_SID'], ENV['KEY_ID'], ENV['AUTH_TOKEN'], [],
+        ttl: 14400,
+        identity: current_user.email
+    # Grant access to Video
+    grant = Twilio::JWT::AccessToken::VideoGrant.new
+    grant.room = booking.url_room
+    token.add_grant grant
+    # Serialize the token as a JWT
+    token.to_jwt
   end
 
 end
