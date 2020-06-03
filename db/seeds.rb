@@ -157,6 +157,8 @@ Slot.create!( proposal: proposal6, start_time: DateTime.strptime("06/10/2020 10:
 Slot.create!( proposal: proposal7, start_time: DateTime.strptime("06/10/2020 10:00", "%m/%d/%Y %H:%M"))
 Slot.create!( proposal: proposal8, start_time: DateTime.strptime("06/10/2020 10:00", "%m/%d/%Y %H:%M"))
 Slot.create!( proposal: proposal9, start_time: DateTime.strptime("06/10/2020 10:00", "%m/%d/%Y %H:%M"))
+Slot.create!( proposal: proposal9, start_time: DateTime.strptime("06/10/2020 14:00", "%m/%d/%Y %H:%M"))
+Slot.create!( proposal: proposal9, start_time: DateTime.strptime("06/10/2020 17:00", "%m/%d/%Y %H:%M"))
 Slot.create!( proposal: proposal10, start_time: DateTime.strptime("06/10/2020 10:00", "%m/%d/%Y %H:%M"))
 Slot.create!( proposal: proposal11, start_time: DateTime.strptime("06/10/2020 10:00", "%m/%d/%Y %H:%M"))
 Slot.create!( proposal: proposal12, start_time: DateTime.strptime("06/10/2020 10:00", "%m/%d/%Y %H:%M"))
@@ -186,6 +188,9 @@ Slot.create!( proposal: proposal21, start_time: DateTime.strptime("06/22/2020 10
 puts "Creating bookings..."
 booking1 = Booking.create!( reservation_status: "pending", chatroom: 12, booker: user1, proposal: proposal5, start_time: DateTime.strptime(proposal5_StarTime1, "%m/%d/%Y %H:%M"))
 booking2 = Booking.create!( reservation_status: "booked",  chatroom: 3, booker: user2, proposal: proposal3  , start_time: DateTime.strptime(proposal3_StarTime1, "%m/%d/%Y %H:%M"))
-booking3 = Booking.create!( reservation_status: "pending",  chatroom: 5, booker: user3, proposal: proposal2 , start_time: DateTime.strptime(proposal2_StarTime1, "%m/%d/%Y %H:%M"))
+booking3 = Booking.create!( reservation_status: "pending",  chatroom: 5, booker: user2, proposal: proposal2 , start_time: DateTime.strptime(proposal2_StarTime1, "%m/%d/%Y %H:%M"))
+booking4 = Booking.create!( reservation_status: "pending",  chatroom: 5, booker: user3, proposal: proposal15 , start_time: DateTime.strptime(proposal2_StarTime1, "%m/%d/%Y %H:%M"))
+booking5 = Booking.create!( reservation_status: "pending",  chatroom: 5, booker: user1, proposal: proposal6 , start_time: DateTime.strptime(proposal2_StarTime1, "%m/%d/%Y %H:%M"))
+
 
 puts "Finished!"
