@@ -34,7 +34,7 @@
                           <i class="fas fa-link icon-grey"> votre lien Twilio </i> <br>
                         <% end %>
                         <div class="update-delete">
-                          <%= link_to proposal_booking_path(booking, booking.proposal), method: :delete, data:{ confirm: 'Etes vous sûr de vouloir supprimer votre réservation?' } do %>
+                          <%= link_to booking_path(booking), method: :delete, data:{ confirm: 'Etes vous sûr de vouloir supprimer votre réservation?' } do %>
                             <i class="fas fa-trash delete-booking icon-grey"></i>
                           <% end %>
                         </div>
