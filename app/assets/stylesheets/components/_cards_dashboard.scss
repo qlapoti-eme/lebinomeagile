@@ -22,20 +22,25 @@
 
 .card-dashboard-bookings {
   width: 305px;
-  height: 410px;
+  height: 390px;
+  padding: 15px;
   background-color: #F4F4F4;
   border-radius: 20px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   overflow: hidden;
   position: relative;
+  display: flex;
+  flex-direction: colomn;
+  align-self: flex-end;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .card-dashboard-bookings img {
-  object-fit: cover;
-  object-position: center;
-  // overflow: hidden;
-  width: 305px;
-  height: 35%;
+ background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.05)),;
+  height: 380px;
+  background-position: top;
 }
 
 .card-dashboard-bookings-categories {
@@ -61,12 +66,18 @@
   margin-top: 10px;
 }
 
-.icon-red {
-  color: $my-red;
+.icon-grey {
+  color: $my-grey;
+  padding: 8px;
 }
 
 .update-delete {
   display: flex;
+  justify-content: flex-end;
+  color: $my-grey;
+  .icon-grey:hover {
+    color: $my-red;
+  }
 }
 
 .update {
@@ -75,7 +86,6 @@
   margin-top: 190px;
   margin-right: 5px;
   padding: 5px;
-  color: $my-grey;
 }
 
 .update:hover {
@@ -84,11 +94,11 @@
 
 .delete {
   position: absolute;
-  margin-left: 265px;
-  margin-top: 190px;
+  margin-left: 200px;
   margin-right: 5px;
   padding: 5px;
   color: $my-grey;
+  bottom: 15px;
 }
 
 .delete:hover {
@@ -98,12 +108,11 @@
 
 .delete-booking {
   position: absolute;
-  position: absolute;
-  margin-left: 245px;
-  margin-top: 75px;
   margin-right: 5px;
   padding: 5px;
   color: #444444;
+  left: 250px;
+  bottom: 20px;
 }
 
 .delete-booking:hover {
@@ -116,19 +125,26 @@
 
 .card-dashboard-proposals {
   width: 305px;
-  height: 410px;
+  height: 390px;
+  padding: 15px;
   background-color: #F4F4F4;
   border-radius: 20px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: colomn;
+  align-self: flex-end;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 
 .card-dashboard-proposals img {
-  object-fit: cover;
-  object-position: center;
-  // overflow: hidden;
-  width: 305px;
-  height: 35%;
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.05)),;
+  height: 380px;
+  background-position: top;
 }
 
 
