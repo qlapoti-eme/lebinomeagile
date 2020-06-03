@@ -8,12 +8,14 @@ class BookingsController < ApplicationController
     @booking = Booking.new
     authorize @booking
     @proposal = Proposal.find(params[:proposal_id])
+    @slots = @proposal.slots
   end
 
   def create
     @booking = Booking.new
     @booking.booker = current_user
     @booking.proposal = Proposal.find(params[:proposal_id])
+    @booking.start_time = params[:booking][:start_time]
     authorize @booking
     if @booking.save!
       flash[:notice] = "Booking done !"

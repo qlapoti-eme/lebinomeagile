@@ -8,20 +8,23 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+
       <div class="modal-body">
-        <p>
 
-        <% proposal.slots.each do |slot| %><br>
-          <%= slot.start_time %>
-          <%= link_to "reservation", proposal_bookings_path(proposal), method: :post, style: "color: black;" %>
-        <% end %>
-        </p>
-        
-      </p>
+        Prochaine disponibilité : <strong> <%= proposal.slots.first.start_time %> </strong><br>
+        Si ce créneau vous convient, réservez-le :) <br><br>
+        Sinon jettez un oeil aux autres créneaux disponibles ici : <br><br>
+        <%= select :slots, :start_time, proposal.slots.map{ |slot| slot.start_time}, { }, {class: "slots_start_time", id: "slots_start_time-#{proposal.id}"} %> <br><br>
+        Un lien <strong>zoom </strong> vous sera envoyé dans la foulée.<br><br>
+        <strong>Bon coup de pouce!</strong>
+
       </div>
-      <div class="modal-footer">
-        <%= link_to "Réservez", proposal_bookings_path(proposal), method: :post, class:"btn btn-primary" %>
 
+      <div class="modal-footer">
+        <%= simple_form_for [proposal, booking], html: { id: "new_booking-#{proposal.id}" } do |c| %>
+          <%= c.input :start_time, as: :string, input_html: { value: proposal.slots.first.start_time, class: 'd-none new_booking_start_time', id: "input_new_booking-#{proposal.id}" } %>
+          <%= c.button :submit, 'Valider', class: 'btn btn-primary' %>
+        <% end %>
       </div>
 
     </div>

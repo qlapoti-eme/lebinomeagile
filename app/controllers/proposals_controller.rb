@@ -33,10 +33,6 @@ class ProposalsController < ApplicationController
     end
   end
 
-  def edit
-    authorize @proposal
-  end
-
   def update
     authorize @proposal
     if @proposal.update(proposal_params)
