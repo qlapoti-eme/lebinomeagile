@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "dashboards", to: "dashboards#index"
   resources :proposals do
-    resources :bookings, only: [:index, :new, :create, :destroy]
+    resources :bookings, only: [:index, :new, :create]
   end
-  resources :bookings, only: [:show]
+  resources :bookings, only: [:show, :destroy]
 end
