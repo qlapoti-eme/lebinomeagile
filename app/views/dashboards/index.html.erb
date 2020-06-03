@@ -15,11 +15,14 @@
   </ul>
 
 
+
   <div class="tab-content" id="myTabContent">
+
           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
             <div class="row">
               <% @bookings.each do |booking| %>
                 <div class="col-3 m-4">
+
                     <div class="card-dashboard-bookings" style="background-image: url('<%= image_path booking.proposal.secondary_category.image %>')">
                       <div class="card-info">
                         <div class="card-index-name">
@@ -35,6 +38,7 @@
                             <i class="fas fa-trash delete-booking icon-grey"></i>
                           <% end %>
                         </div>
+
                       </div>
                     </div>
                 </div>

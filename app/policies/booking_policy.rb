@@ -13,6 +13,10 @@ class BookingPolicy < ApplicationPolicy
     return true
   end
 
+  def show?
+    return true
+  end
+
   def update?
     record.proposer == user
     # - record: the instance (proposal) passed to the `authorize` method in controller
@@ -20,6 +24,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.proposer == user
+    return true
+    # record.proposer == user
   end
 end
