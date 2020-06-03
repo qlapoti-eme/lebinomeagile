@@ -11,10 +11,10 @@
 
       <div class="modal-body">
 
-        Prochaine disponibilité : <strong> <%= proposal.slots.first.start_time %> </strong><br>
+        Prochaine disponibilité : <strong> <%= proposal.slots.first.start_time.strftime("%d %b %Y à %l:%M %p") %> </strong><br>
         Si ce créneau vous convient, réservez-le :) <br><br>
         Sinon jettez un oeil aux autres créneaux disponibles ici : <br><br>
-        <%= select :slots, :start_time, proposal.slots.map{ |slot| slot.start_time}, { }, {class: "slots_start_time", id: "slots_start_time-#{proposal.id}"} %> <br><br>
+        <%= select :slots, :start_time, proposal.slots.map{ |slot| slot.start_time.strftime("%d %b %Y à %l:%M %p")}, { }, {class: "slots_start_time", id: "slots_start_time-#{proposal.id}"} %> <br><br>
         Un lien <strong>zoom </strong> vous sera envoyé dans la foulée.<br><br>
         <strong>Bon coup de pouce!</strong>
 
