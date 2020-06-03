@@ -18,14 +18,14 @@
         Un lien <strong>zoom </strong> vous sera envoyé dans la foulée.<br><br>
         <strong>Bon coup de pouce!</strong>
 
-      </div>
-
-      <div class="modal-footer">
         <%= simple_form_for [proposal, booking], html: { id: "new_booking-#{proposal.id}" } do |c| %>
-          <%= c.input :start_time, as: :string, input_html: { value: proposal.slots.first.start_time, class: 'd-none new_booking_start_time', id: "input_new_booking-#{proposal.id}" } %>
+          <%= c.input :start_time, as: :string, label: false, input_html: { value: proposal.slots.first.start_time, class: 'd-none new_booking_start_time', id: "input_new_booking-#{proposal.id}" } %>
           <%= c.button :submit, 'Valider', class: 'btn btn-primary' %>
         <% end %>
+
       </div>
+
+
 
     </div>
   </div>
