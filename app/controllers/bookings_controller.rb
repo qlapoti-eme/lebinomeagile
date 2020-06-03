@@ -29,6 +29,12 @@ class BookingsController < ApplicationController
     @token = generate_token(@booking)
   end
 
+  def destroy
+    authorize @booking
+    @booking.destroy
+    redirect_to dashboards_path
+  end
+  
   private
 
   
