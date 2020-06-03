@@ -24,7 +24,7 @@ module Lebinomeagile
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
-    # config.time_zone = 'Paris'
+    config.time_zone = 'Europe/Paris'
     # config.active_record.default_timezone = :local
 
     # Quand tu gères la timezone de ton user -> local
