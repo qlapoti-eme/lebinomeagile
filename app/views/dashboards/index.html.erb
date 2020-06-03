@@ -32,7 +32,7 @@
                         <i class="far fa-user-circle icon-grey"> <%= booking.proposer.email %></i> <br>
                         
                         <%= link_to booking do %>
-                        <i class="fas fa-link icon-red"> Votre lien zoom</i> <br>
+                        <i class="fas fa-link icon-grey"> Votre lien twilio</i> <br>
                         <% end %>
                         
                         <div class="update-delete">
@@ -60,7 +60,7 @@
                   <p id="date-time">
                     <i class="far fa-clock icon-grey">  <%= proposal.slots.first.start_time.strftime("%d %b %Y à %l:%M %p") %> </i> <br>
                   <% if proposal.booking.present? %>
-                    <%= link_to proposal.booking.url_room do %>
+                    <%= link_to booking_path(proposal.booking) do %>
                       <i class="fas fa-link icon-grey"> Votre lien Twilio</i> <br>
                     <% end %>
                   <% end %>
