@@ -28,8 +28,9 @@ class BookingsController < ApplicationController
     authorize @booking
     @token = generate_token(@booking)
   end
-
+  
   def destroy
+    @booking = Booking.find(params[:id])
     authorize @booking
     @booking.destroy
     redirect_to dashboards_path
