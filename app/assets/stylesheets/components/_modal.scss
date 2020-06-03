@@ -3,3 +3,17 @@
   color: white;
 }
 
+.modal-body {
+ .btn-primary {
+  color: $my-red;
+  border-color: $my-red;
+  position: absolute;
+  bottom: 20px;
+  left: 75%;
+  }
+  .btn-primary:hover {
+  background-color: white;
+  color: $my-grey;
+  border-color: $my-grey;
+  }
+}
