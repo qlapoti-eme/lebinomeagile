@@ -30,12 +30,10 @@ require("flatpickr/dist/themes/dark.css")
 // import { initSelect2 } from '../components/init_select2';
 import { initFormProposal } from '../components/secondary_category_form.js';
 import { initSecondaryOptions } from '../components/secondary_category_form.js';
-import { flatpickerInit } from '../plugins/flatpickr';
-<<<<<<< HEAD
+import { flatpickerInit } from '../plugins/flatpickr.js';
 import { initFormBooking } from '../components/create_booking.js';
-=======
-import twilioInit from '../plugins/twilio';
->>>>>>> master
+import twilioInit from '../plugins/twilio.js';
+
 
 // pour forcer le rechargement du js quand la page est chargée par turbolinks
 document.addEventListener('turbolinks:load', () => {
