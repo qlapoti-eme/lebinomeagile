@@ -51,7 +51,7 @@ img10 = "coaching.jpg"
 # SOUTIEN SCOLAIRE . primaire . secondaire . lycée
 secondary_category1 = SecondaryCategory.create!( name:"primaire" , primary_category: primary_category1, image: img1)
 secondary_category2 = SecondaryCategory.create!( name:"secondaire" , primary_category: primary_category1, image: img2)
-secondary_category3 = SecondaryCategory.create!( name:"lycée" , primary_category: primary_category1, image: img3)
+secondary_category3 = SecondaryCategory.create!( name:"lycee" , primary_category: primary_category1, image: img3)
 
 # MOMENT LOISIR . culinaire . littéraire . musical . linguistique
 secondary_category4 = SecondaryCategory.create!( name:"culinaire", primary_category: primary_category2, image: img4)
