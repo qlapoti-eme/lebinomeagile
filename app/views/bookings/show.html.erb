@@ -6,7 +6,11 @@
   data-room="<%= @booking.url_room %>" 
   data-token="<%= @token %>"
 >
-  <div id="remote-media-div">
-    <video id="video" autoplay muted="true" width="320" height="240"></video>
+  <div class="remote-media-div">
+    <video class="participant" autoplay muted="true" width="700" height="400"></video>
+  </div> 
+
+  <div class="remote-media-div">
+    <video id="userVideo" autoplay muted="true" width="320" height="240"></video>
   </div> 
  </div>
