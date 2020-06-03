@@ -28,7 +28,7 @@
                         <div class="card-index-name">
                           <%= booking.proposal.name%>
                         </div>
-                        <p id="date-time"> <i class="far fa-clock icon-grey"> Le lundi de 16h à 18h</i> <br>
+                        <p id="date-time"> <i class="far fa-clock icon-grey"> <%= booking.start_time.strftime("%d %b %Y à %l:%M %p") %></i> <br>
                         <i class="far fa-user-circle icon-grey"> <%= booking.proposer.email %></i> <br>
                         
                         <%= link_to booking do %>
@@ -57,7 +57,8 @@
               <div class="card-info">
                  <div class="card-index-name">
                   <%= proposal.name%>
-                  <p id="date-time"> <i class="far fa-clock icon-grey">  Lundi 23 Juin à 18h </i> <br>
+                  <p id="date-time">
+                    <i class="far fa-clock icon-grey">  <%= proposal.slots.first.start_time.strftime("%d %b %Y à %l:%M %p") %> </i> <br>
                   <% if proposal.booking.present? %>
                     <%= link_to booking_path(proposal.booking) do %>
                       <i class="fas fa-link icon-grey"> Votre lien Twilio</i> <br>
