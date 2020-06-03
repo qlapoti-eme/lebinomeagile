@@ -38,12 +38,14 @@
   margin-top: auto;
   bottom: 0;
   width: 100%;
+  display:flex;
+  flex-direction: column;
 }
 
 .card-index {
   width: 305px;
   height: 390px;
-  padding: 15px;
+  padding: 25px;
   background-color: #F4F4F4;
   border-radius: 20px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -72,33 +74,33 @@
 }
 
 .card-index:hover {
+  transition: ease 1s;
   .card-index-name {
     margin-top: 10px;
     position: absolute;
     text-align: left;
-    transition: ease 1s;
   }
   .card-index-secondary-category {
     display: none;
   }
   .card-index-description {
     display: block;
-    padding: 30px 10px;
+    padding: 30px 0 ;
     margin-top: 30px;
-    transition: ease 1s;
   }
 
  .btn-index-card {
   opacity: 1;
-  color: #444444;
-  border-color: #444444;
+  color: $my-red;
+  border-color: $my-red;
   display: block;
+  margin: 0 auto;
   }
 
   .btn-index-card:hover {
   opacity: 1;
-  color: #B31B34;
-  border-color: #B31B34;
+  color: $my-grey;
+  border-color: $my-grey;
   display: block;
   text-decoration: none;
   }
