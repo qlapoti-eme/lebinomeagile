@@ -27,6 +27,7 @@ puts "Creating users..."
 user1 = User.create!( email: "emarie1@gmail.com", password: '123456')
 user2 = User.create!( email: "yoann@gmail.com", password: 'azerty')
 user3 = User.create!( email: "fred@gmail.com", password: 'azerty')
+user4 = User.create!( email: "demo@gmail.com" , password: 'azerty')
 
 puts "Creating Primary Categories..."
 img1 = "soutien_scolaire.jpg"
@@ -111,7 +112,7 @@ proposal19 = Proposal.create!( name: "Prépa bac français", description: "Bonjo
 proposal12 = Proposal.create!( name: "Tiramisu à l'italienne", description: "Je viens de l'italie, j'aime la couisine della nonna", proposer: user1, secondary_category: secondary_category4 )
 proposal10 = Proposal.create!( name: "Do It Yourself", description: "Passionnée de DIY, je peux donner des petits conseils", proposer: user3, secondary_category: secondary_category7 )
 proposal_conseil_04 = Proposal.create!( name: name_conseil_04, description: description_conseil_04, proposer: user1, secondary_category: secondary_category9  )
-proposal15 = Proposal.create!( name: "Devoirs école", description: "N'hésitez pas à me contacter pour aider vos enfants à faire leurs devoirs!", proposer: user1, secondary_category: secondary_category1 )
+proposal15 = Proposal.create!( name: "Devoirs école", description: "N'hésitez pas à me contacter pour aider vos enfants à faire leurs devoirs!", proposer: user4, secondary_category: secondary_category1 )
 proposal_conseil_06 = Proposal.create!( name: name_conseil_06, description: description_conseil_06, proposer: user3, secondary_category: secondary_category10 )
 proposal13 = Proposal.create!( name: "Discussions Espagnol / Français", description: "Hola ! Je vous propose de discuter ensemble 30 minutes en français puis en espagnol", proposer: user1, secondary_category: secondary_category7 )
 

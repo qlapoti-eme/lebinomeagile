@@ -1,15 +1,29 @@
-<%= "SHOW" %>
-<%= @booking.url_room %>
+<div class="title-wrapper">
+  <div class="container">
+    <h1 class="title">Votre binôme online</h1>
+  </div>
+</div>
+
 <div 
   class="twilio-video" 
   data-sid="<%= ENV["ACCOUNT_SID"] %>" 
   data-room="<%= @booking.url_room %>" 
   data-token="<%= @token %>"
->
-  <div class="participant">
-  </div> 
+  >
 
-  <div class="remote-media-div">
-    <video id="userVideo" autoplay muted="true" width="320" height="240"></video>
-  </div> 
- </div>
+  <div class="user-btn">
+    <div class="remote-media-div">
+      <video id="userVideo" autoplay muted="true" ></video>
+    </div>
+    <div class="participant">
+    </div> 
+    <div>
+      <button id='leave-btn' class='btn btn-primary'> 
+        Quittez le coup de pouce!
+      </button>
+    </div>
+  </div>
+
+  <%= link_to '', root_path, class: 'd-none root-link', data: {turbolinks: false}  %>
+
+</div>
