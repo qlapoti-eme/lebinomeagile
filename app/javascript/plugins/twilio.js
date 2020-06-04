@@ -3,6 +3,8 @@ import { connect, createLocalTracks } from 'twilio-video';
 const twilioInit = () => {
   const twilioContainer = document.querySelector('.twilio-video');
   const video = document.getElementById('userVideo');
+  const leaveBtn = document.getElementById('leave-btn');
+  const link = document.querySelector('.root-link')
   const Video = Twilio.Video;
   let videoRoom, localStream;
   // preview screen
@@ -12,6 +14,10 @@ const twilioInit = () => {
     video.srcObject = vid;
     localStream = vid;
     console.log(video)
+    leaveBtn.addEventListener('click', () => {
+      const tracks = vid.getTracks();
+      tracks.forEach(track => track.stop());
+    });
   });
 
   createLocalTracks({
@@ -33,6 +39,12 @@ const twilioInit = () => {
     room.once("disconnected", (error) =>
       room.participants.forEach(participantDisconnected)
     );
+    // leave room
+    leaveBtn.addEventListener('click', () => {
+      videoRoom.disconnect();
+      console.log(`Disconnected from Room ${videoRoom.name}`);
+      link.click()
+    });
     // twilioAddParticipant(room);
   });
 }
