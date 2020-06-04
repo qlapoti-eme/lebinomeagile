@@ -7,19 +7,19 @@
 
 <div class="container">
 
-  <div class="text-left ml-4">
+  <div class="text-left position-relative">
     <% @categories.each do |cat|  %>
       <%= link_to cat.name, proposals_path(:cat => cat.id), class: "btn btn-primary #{params[:cat].to_i == cat.id ? "active" : ""}" %>
     <% end %>
 
-    <%= link_to proposals_path do %>
-      <i class="fas fa-times-circle cross"></i><br>
+    <%= link_to proposals_path, class: "cross" do %>
+      <i class="fas fa-times-circle"></i><br>
     <% end %>
   </div>
 
   <div class="row">
     <% @proposals.each do |proposal| %>
-      <div class="col-3 m-4">
+      <div class="col-4 my-4">
         <div class="card-index" style="background-image: url('<%= image_path proposal.secondary_category.image %>')">
           <div class="card-info">
             <div class="card-index-name">
@@ -33,9 +33,7 @@
             <div class="card-index-description">
              <%= proposal.description%>
             </div>
-            <div>
-              <a class="button btn-index-card" data-toggle="modal" data-target="#modalCenter<%= proposal.id %>" href="/proposals">Disponibilités</a>
-            </div>
+            <a class="button btn-index-card" data-toggle="modal" data-target="#modalCenter<%= proposal.id %>" href="/proposals">Disponibilités</a>
           </div>
         </div>
       </div>
