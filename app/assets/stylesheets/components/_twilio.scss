@@ -7,20 +7,20 @@
   list-style: none;
 }
 
-  #participant {
-  width: 460px;
-  height: 280px;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 20px;
+  .participant {
+  border-radius: 16px;
+  overflow: hidden;
+  video {
+    border-radius: 16px;
+    width: 100%;
+  }
 }
 
 .remote-media-div {
 }
 
 #userVideo {
-  width: 245px;
-  height: 185px;
-  border-radius: 50px;
+  width: 100%;
+  border-radius: 16px;
 }
 
