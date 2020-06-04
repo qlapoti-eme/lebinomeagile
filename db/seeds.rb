@@ -50,6 +50,26 @@ img9 = "botanique.jpg"
 img10 = "coaching.jpg"
 
 # SOUTIEN SCOLAIRE . primaire . secondaire . lycée
+img11 = "college1.jpg"
+img12 = "college2.jpg"
+img13 = "college3.jpg"
+img14 = "ecole1.jpg"
+img15 = "ecole2.jpg"
+img16 = "ecole3.jpg"
+img17 = "lycee1.jpg"
+img18 = "lycee2.jpg"
+img19 = "lycee3.jpg"
+secondary_category11 = SecondaryCategory.create!( name:"primaire" , primary_category: primary_category1, image: img14)
+secondary_category12 = SecondaryCategory.create!( name:"primaire" , primary_category: primary_category1, image: img15)
+secondary_category13 = SecondaryCategory.create!( name:"primaire" , primary_category: primary_category1, image: img16)
+secondary_category21 = SecondaryCategory.create!( name:"secondaire" , primary_category: primary_category1, image: img11)
+secondary_category22 = SecondaryCategory.create!( name:"secondaire" , primary_category: primary_category1, image: img12)
+secondary_category23 = SecondaryCategory.create!( name:"secondaire" , primary_category: primary_category1, image: img13)
+secondary_category31 = SecondaryCategory.create!( name:"lycee" , primary_category: primary_category1, image: img17)
+secondary_category32 = SecondaryCategory.create!( name:"lycee" , primary_category: primary_category1, image: img18)
+secondary_category33 = SecondaryCategory.create!( name:"lycee" , primary_category: primary_category1, image: img19)
+
+# SOUTIEN SCOLAIRE . primaire . secondaire . lycée
 secondary_category1 = SecondaryCategory.create!( name:"primaire" , primary_category: primary_category1, image: img1)
 secondary_category2 = SecondaryCategory.create!( name:"secondaire" , primary_category: primary_category1, image: img2)
 secondary_category3 = SecondaryCategory.create!( name:"lycee" , primary_category: primary_category1, image: img3)

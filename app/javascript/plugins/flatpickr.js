@@ -19,6 +19,13 @@ const flatpickerInit = () => {
     defaultDate: "10:00",
     time_24hr: true,
   });
+  flatpickr(".timepicker-end", {
+    enableTime: true,
+    noCalendar: true,
+    dateFormat: "H:i",
+    defaultDate: "11:00",
+    time_24hr: true,
+  });
 }  
 
 export { flatpickerInit };
