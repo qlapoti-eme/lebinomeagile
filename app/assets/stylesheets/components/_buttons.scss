@@ -1,7 +1,7 @@
  .btn-primary {
-  color: black;
-  border: 1px solid #4A4A4A;
-  padding: 8px 24px;
+  color: $my-red;
+  border: 1px solid $my-red;
+  padding: 7px 24px;
   border-radius: 50px;
   font-weight: lighter;
   opacity: 1;
@@ -11,7 +11,9 @@
 
 .btn-primary:hover {
   opacity: 1;
-  color: #B31B34;
+  color: white;
+  background-color: $my-red;
+  border-color: $my-red;
 }
 
 #btn-reset {
@@ -25,12 +27,12 @@
 }
 
 .btn {
-  color: #444444;
+  color: $my-red;
   text-decoration: none
 }
 
 .btn:hover {
-  color: #B31B34;
+  color: white;
   text-decoration: none
 }
 
@@ -38,14 +40,34 @@
   font-size: 22px;
   margin-right: 20px;
   position: absolute;
-  right: 280px;
-  top: 155px;
+  right: 0px;
+  top: 0px;
   color:#444444;
 }
 
 .cross:hover {
   color:$my-red;
 }
+
+#btn-binome {
+  color: $my-red;
+  background-color: white;
+  border-color: $my-red;
+
+  &:hover {
+    color: white;
+    background-color: $my-red;
+    border-color: $my-red;
+  }
+}
+
+.btn-dashboard-proposal {
+  position: absolute;
+  bottom: 20%;
+  width: 70%;
+}
+
+
 
 
 

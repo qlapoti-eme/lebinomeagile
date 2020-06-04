@@ -4,26 +4,38 @@
   </div>
 </div>
 
-<div 
-  class="twilio-video" 
-  data-sid="<%= ENV["ACCOUNT_SID"] %>" 
-  data-room="<%= @booking.url_room %>" 
-  data-token="<%= @token %>"
-  >
+<div class="container">
+  <div 
+    class="twilio-video" 
+    data-sid="<%= ENV["ACCOUNT_SID"] %>" 
+    data-room="<%= @booking.url_room %>" 
+    data-token="<%= @token %>"
+    >
 
-  <div class="user-btn">
-    <div class="remote-media-div">
-      <video id="userVideo" autoplay muted="true" ></video>
+    <div class="row justify-content-between">
+      <div class="col-7">
+        <div class="participant">
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="remote-media-div text-center">
+          <video id="userVideo" autoplay muted="true" ></video>
+          <div>
+            <button id='leave-btn' class='btn btn-primary mt-3'> 
+              Quittez
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="participant">
-    </div> 
-    <div>
-      <button id='leave-btn' class='btn btn-primary'> 
-        Quittez le coup de pouce!
-      </button>
+    <div class="row">
+      <div class="col-7">
+      <p class="text-center">
+        <%= @booking.booker == current_user ? @booking.proposal.proposer.email : @booking.booker.email %>
+      </p>
+      </div>
     </div>
+    <%= link_to '', root_path, class: 'd-none root-link', data: {turbolinks: false}  %>
+
   </div>
-
-  <%= link_to '', root_path, class: 'd-none root-link', data: {turbolinks: false}  %>
-
 </div>
