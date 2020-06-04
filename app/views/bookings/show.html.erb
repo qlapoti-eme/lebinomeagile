@@ -14,14 +14,15 @@
   <div class="user-btn">
     <div class="remote-media-div">
       <video id="userVideo" autoplay muted="true" ></video>
+      <div>
+        <button id='leave-btn' class='btn btn-primary'> 
+          Quittez le coup de pouce!
+        </button>
+      </div>
     </div>
-    <div class="participant">
+    <div >
+      <video class="participant" autoplay muted="true" ></video>
     </div> 
-    <div>
-      <button id='leave-btn' class='btn btn-primary'> 
-        Quittez le coup de pouce!
-      </button>
-    </div>
   </div>
 
   <%= link_to '', root_path, class: 'd-none root-link', data: {turbolinks: false}  %>

@@ -7,7 +7,7 @@
   list-style: none;
 }
 
-  .participant {
+  #participant {
   width: 460px;
   height: 280px;
   margin-left: auto;
@@ -16,12 +16,11 @@
 }
 
 .remote-media-div {
-  overflow: hidden;
 }
 
 #userVideo {
   width: 245px;
-  height: 200px;
+  height: 185px;
   border-radius: 50px;
 }
 
