@@ -44,15 +44,28 @@
       width: 100%;
       display:flex;
       flex-direction: column;
-      height: 100%;
+      height: 90%;
       overflow: hidden;
     }
 
+    .card-dashboard-secondary-category {
+      margin-top: 10px;
+      text-align: left;
+      margin-right: 7px;
+      font-size: 14px;
+      display: block;
+      width: fit-content;
+        p {
+        background-color: $light-gray;
+        border-radius: 20px;
+        padding: 5px 10px;
+        margin-bottom: 0;
+        }
+       }
 
-
-
-
-
+     .card-dashboard-infos {
+      margin-top: 20px;
+      }
 
 
 
@@ -130,12 +143,8 @@
 
 
 .delete-booking {
-  position: absolute;
-  margin-right: 5px;
   padding: 5px;
   color: #444444;
-  left: 250px;
-  bottom: 20px;
 }
 
 .delete-booking:hover {
@@ -192,6 +201,8 @@
 }
 
 
+
+
 #home-tab {
   // border-radius: 20px;
   border: none;
@@ -205,6 +216,14 @@
 #myTab {
   margin-bottom: 40px;
   border: none;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: $my-grey;
+}
+
+.nav-pills .nav-link.active {
+  color: $my-red;
 }
 
 
