@@ -31,19 +31,10 @@
   display: flex;
 }
 
-.card-info {
-  background-color: white;
-  border-radius: 20px;
-  padding: 20px;
-  margin-top: auto;
-  bottom: 0;
-  width: 100%;
-  display:flex;
-  flex-direction: column;
-}
+
 
 .card-index {
-  width: 305px;
+  // width: 305px;
   height: 390px;
   padding: 25px;
   background-color: #F4F4F4;
@@ -52,98 +43,106 @@
   overflow: hidden;
   position: relative;
   display: flex;
-  flex-direction: colomn;
-  align-self: flex-end;
   object-fit: cover;
   background-repeat: no-repeat;
-  background-size: cover;
-}
+  background-size:cover;
+  align-items: flex-end;
 
+  .card-info {
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    bottom: 0;
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    height: 100%;
+    max-height: 40%;
+    transition: all 0.7s ease-out;
+    overflow: hidden;
 
-.card-index img {
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.05)),;
-  height: 380px;
-  background-position: top;
-}
+    .card-index-name {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
 
-.card-index-name {
-  align-item: left;
-  text-align: left;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.card-index:hover {
-  transition: ease 1s;
-  .card-index-name {
-    margin-top: 10px;
-    position: absolute;
+    .card-index-secondary-category {
     text-align: left;
-    width: 80%;
-  }
-  .card-index-secondary-category {
-    display: none;
-  }
-  .card-index-description {
+    margin-right: 7px;
+    font-size: 14px;
     display: block;
-    padding: 30px 0 ;
-    margin-top: 30px;
+    width: fit-content;
+      p {
+      background-color: $light-gray;
+      border-radius: 20px;
+      padding: 5px 10px;
+      margin-bottom: 0;
+      }
+    }
+
+    .card-index-description {
+      // height: 0;
+      margin-top: 50px;
+      // overflow: hidden;
+    }
+
+    .btn-index-card {
+      color: #444444;
+      border: 1px solid #4A4A4A;
+      border-color: #444444;
+      padding: 5px;
+      border-radius: 50px;
+      font-weight: lighter;
+      // opacity: 1;
+      // transition: opacity 0.3s ease;
+      background-color: white;
+      text-align: center;
+      width: 120px;
+      display: none;
+      align-self: center;
+      // margin-top: 80px;
+    }
   }
 
- .btn-index-card {
-  opacity: 1;
-  color: $my-red;
-  border-color: $my-red;
-  display: block;
-  margin: 0 auto;
+  &:hover {
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+
+    .card-info {
+      height: 100%;
+      max-height: 100%;
+      transition: all 0.7s ease-out;
+    }
+
+    .card-index-name {
+      text-align: left;
+    }
+    .card-index-secondary-category {
+      // display: none;
+    }
+    .card-index-description {
+      // height: fit-content;
+      // padding: 30px 0 ;
+      margin: 30px 0;
+    }
+
+   .btn-index-card {
+      opacity: 1;
+      color: $my-red;
+      border-color: $my-red;
+      display: block;
+      margin: 0 auto;
+
+      &:hover {
+        opacity: 1;
+        color: $light-gray;
+        border-color: $my-red;
+        display: block;
+        text-decoration: none;
+        background: $my-red;
+      }
+    }
   }
-
-  .btn-index-card:hover {
-  opacity: 1;
-  color: $my-grey;
-  border-color: $my-grey;
-  display: block;
-  text-decoration: none;
-  }
-
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
 }
 
-.card-index-secondary-category {
-text-align: left;
-margin-right: 7px;
-font-size: 14px;
-display: block;
-width: fit-content;
-p {
-background-color: $light-gray;
-border-radius: 20px;
-padding: 5px 10px;
-margin-bottom: 0;
-}
-}
-
-.card-index-description {
-  display: none;
-}
-
-
-.btn-index-card {
-  width: 100px;
-  color: #444444;
-  border: 1px solid #4A4A4A;
-  border-color: #444444;
-  padding: 5px;
-  border-radius: 50px;
-  font-weight: lighter;
-  opacity: 1;
-  transition: opacity 0.3s ease;
-  background-color: white;
-  text-align: center;
-  width: 120px;
-  display: none;
-  // margin-top: 80px;
-
-}
 
 
