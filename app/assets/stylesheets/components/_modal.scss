@@ -17,3 +17,39 @@
   border-color: $my-grey;
   }
 }
+
+.calendar {
+  display: flex;
+}
+
+
+.container_day {
+  border-right: solid 0.5px;
+  padding: 10px 20px 10px 20px;
+}
+
+.date {
+  text: bold;
+  text-align: center;
+  border-bottom: solid 0.5px;
+  padding-bottom: 2px;
+  margin-bottom: 10px;
+}
+
+.slot {
+  padding: 5px 10px 5px 10px;
+  margin: 5px 5px 5px 5px;
+  background-color: $my-red;
+  color: white;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.slot:hover{
+  padding: 5px 10px 5px 10px;
+  margin: 5px 5px 5px 5px;
+  background-color: $my-yellow;
+  color: white;
+}
+
+

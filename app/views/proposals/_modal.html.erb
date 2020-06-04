@@ -11,17 +11,44 @@
 
       <div class="modal-body">
 
-        Prochaine disponibilité : <strong> <%= proposal.slots.first.start_time.strftime("%d %b %Y à %l:%M %p") %> </strong><br>
-        Si ce créneau vous convient, réservez-le :) <br><br>
+        Prochaine disponibilité : <strong> <%= proposal.slots.first.start_time.strftime("%d %b à %R") %> </strong><br>
+        Si ce créneau vous convient, réservez-le ! <br><br>
         Sinon jettez un oeil aux autres créneaux disponibles ici : <br><br>
-        <%= select :slots, :start_time, proposal.slots.map{ |slot| slot.start_time.strftime("%d %b %Y à %l:%M %p")}, { }, {class: "slots_start_time", id: "slots_start_time-#{proposal.id}"} %> <br><br>
-        Un lien de <strong>visioconférence</strong> vous sera envoyé dans la foulée.<br><br>
-        <strong>Bon coup de pouce!</strong>
 
-        <%= simple_form_for [proposal, booking], html: { id: "new_booking-#{proposal.id}" } do |c| %>
-          <%= c.input :start_time, as: :string, label: false, input_html: { value: proposal.slots.first.start_time, class: 'd-none new_booking_start_time', id: "input_new_booking-#{proposal.id}" } %>
-          <%= c.button :submit, 'Valider', class: 'btn btn-primary' %>
-        <% end %>
+        <%
+          slots_by_date = proposal.slots.group_by do |slot|
+            slot.start_time.to_date
+          end
+        %>
+
+        <div class="calendar_toggle_input">
+          <div class="calendar">
+            <% slots_by_date.first(5).each do |date, slots| %>
+              <div class="container_day">
+                <div class="date">
+                  <%= date.strftime("%d %b") %>
+                </div>
+                <div class="container_slots">
+                  <% slots.each do |slot| %>
+                    <div class="slot">
+                      <%=slot.start_time.strftime("%R")%>
+                      <div class="d-none" id="true_date"><%= slot.start_time %></div>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <br><br>
+          Un lien de <strong>visioconférence</strong> vous sera envoyé dans la foulée.<br><br>
+          <strong>Bon coup de pouce!</strong>
+
+          <%= simple_form_for [proposal, booking], html: { id: "new_booking-#{proposal.id}" } do |c| %>
+            <%= c.input :start_time, as: :string, label: false, input_html: { value: proposal.slots.first.start_time, class: 'd-none new_booking_start_time', id: "input_new_booking-#{proposal.id}" } %>
+            <%= c.button :submit, 'Valider', class: 'btn btn-primary' %>
+          <% end %>
+
+        </div>
 
       </div>
 

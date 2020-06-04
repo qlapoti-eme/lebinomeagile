@@ -24,23 +24,23 @@ class BookingsController < ApplicationController
       render :new
     end
   end
-  
+
   def show
     @booking = Booking.find(params[:id])
     authorize @booking
     @token = generate_token(@booking)
   end
-  
+
   def destroy
     @booking = Booking.find(params[:id])
     authorize @booking
     @booking.destroy
     redirect_to dashboards_path
   end
-  
+
   private
 
-  
+
 
   def generate_token(booking)
     # Create an Access Token

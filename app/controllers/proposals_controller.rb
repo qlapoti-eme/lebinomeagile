@@ -4,7 +4,7 @@ class ProposalsController < ApplicationController
 
   def index
     @booking = Booking.new
-    @proposals = policy_scope(Proposal).order(created_at: :desc)
+    @proposals = policy_scope(Proposal).preload(:slots).order(created_at: :desc)
     if params[:cat]
       @proposals = @proposals.select { |proposal| proposal.primary_category.id == params[:cat].to_i }
     end
