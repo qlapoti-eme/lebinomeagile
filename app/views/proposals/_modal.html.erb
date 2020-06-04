@@ -15,7 +15,7 @@
         Si ce créneau vous convient, réservez-le :) <br><br>
         Sinon jettez un oeil aux autres créneaux disponibles ici : <br><br>
         <%= select :slots, :start_time, proposal.slots.map{ |slot| slot.start_time.strftime("%d %b %Y à %l:%M %p")}, { }, {class: "slots_start_time", id: "slots_start_time-#{proposal.id}"} %> <br><br>
-        Un lien <strong>zoom </strong> vous sera envoyé dans la foulée.<br><br>
+        Un lien de <strong>visioconférence</strong> vous sera envoyé dans la foulée.<br><br>
         <strong>Bon coup de pouce!</strong>
 
         <%= simple_form_for [proposal, booking], html: { id: "new_booking-#{proposal.id}" } do |c| %>
