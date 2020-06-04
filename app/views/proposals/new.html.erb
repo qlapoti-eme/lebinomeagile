@@ -31,7 +31,7 @@
 
         <%= c.input :dates, input_html: { class: "datepicker" }, label: "Jours de disponibilités" %>
         <%= c.input :start_slot, input_html: { class: "timepicker"}, label: "Heure de début"  %>
-        <%= c.input :end_slot, input_html: { class: "timepicker"}, label: "Heure de fin"  %>
+        <%= c.input :end_slot, input_html: { class: "timepicker-end"}, label: "Heure de fin"  %>
         <%= c.input :description, as: :text, placeholder: "Pendant cette heure, je vous propose de cuisiner la recette de lasage de ma grand mère ... " %>
         <%= c.button :submit, "Validez", class: 'btn btn-primary' %>
 

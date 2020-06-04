@@ -50,6 +50,26 @@ img9 = "botanique.jpg"
 img10 = "coaching.jpg"
 
 # SOUTIEN SCOLAIRE . primaire . secondaire . lycée
+img11 = "college1.jpg"
+img12 = "college2.jpg"
+img13 = "college3.jpg"
+img14 = "ecole1.jpg"
+img15 = "ecole2.jpg"
+img16 = "ecole3.jpg"
+img17 = "lycee1.jpg"
+img18 = "lycee2.jpg"
+img19 = "lycee3.jpg"
+secondary_category11 = SecondaryCategory.create!( name:"primaire" , primary_category: primary_category1, image: img14)
+secondary_category12 = SecondaryCategory.create!( name:"primaire" , primary_category: primary_category1, image: img15)
+secondary_category13 = SecondaryCategory.create!( name:"primaire" , primary_category: primary_category1, image: img16)
+secondary_category21 = SecondaryCategory.create!( name:"secondaire" , primary_category: primary_category1, image: img11)
+secondary_category22 = SecondaryCategory.create!( name:"secondaire" , primary_category: primary_category1, image: img12)
+secondary_category23 = SecondaryCategory.create!( name:"secondaire" , primary_category: primary_category1, image: img13)
+secondary_category31 = SecondaryCategory.create!( name:"lycee" , primary_category: primary_category1, image: img17)
+secondary_category32 = SecondaryCategory.create!( name:"lycee" , primary_category: primary_category1, image: img18)
+secondary_category33 = SecondaryCategory.create!( name:"lycee" , primary_category: primary_category1, image: img19)
+
+# SOUTIEN SCOLAIRE . primaire . secondaire . lycée
 secondary_category1 = SecondaryCategory.create!( name:"primaire" , primary_category: primary_category1, image: img1)
 secondary_category2 = SecondaryCategory.create!( name:"secondaire" , primary_category: primary_category1, image: img2)
 secondary_category3 = SecondaryCategory.create!( name:"lycee" , primary_category: primary_category1, image: img3)
@@ -96,23 +116,23 @@ start_conseil_06 = "06/07/2020 13:00"
 
 # 1ere salve toutes catégories
 puts "Creating proposals..."
-proposal1 = Proposal.create!( name: "Aide aux devoirs", description: "Je peux aider des collégiens à faire leurs devoirs", proposer: user1, secondary_category: secondary_category2  )
+proposal1 = Proposal.create!( name: "Aide aux devoirs", description: "Je peux aider des collégiens à faire leurs devoirs", proposer: user1, secondary_category: secondary_category33  )
 proposal3 = Proposal.create!( name: "Partager mes meileures recettes", description: "Je cuisine tous les soirs vers 19h si quelqu'un veut cuisiner avec moi via zoom!", proposer: user3, secondary_category: secondary_category4 )
-proposal20 = Proposal.create!( name: "Latin - Grec", description: "Aide en version et en thème ;)", proposer: user3, secondary_category: secondary_category3  )
-proposal4 = Proposal.create!( name: "Aider des enfants", description: "Institutrice à la retraite peut aider à faire les devoirs", proposer: user2, secondary_category: secondary_category1 )
+proposal20 = Proposal.create!( name: "Latin - Grec", description: "Aide en version et en thème ;)", proposer: user3, secondary_category: secondary_category32  )
+proposal4 = Proposal.create!( name: "Aider des enfants", description: "Institutrice à la retraite peut aider à faire les devoirs", proposer: user2, secondary_category: secondary_category13 )
 proposal18 = Proposal.create!( name: "Histoire", description: "Passionné d'histoire, peut faire réviser desc cours!", proposer: user2, secondary_category: secondary_category2 )
 proposal11 = Proposal.create!( name: "Atelier récupération palettes", description: "Hello, passioné de craft et récup, je vous propose un petit atelier pour faire des meubles sympa", proposer: user3, secondary_category: secondary_category8 )
-proposal6 = Proposal.create!( name: "Aide à la lecture", description: "Je peux lire des histoires à des enfants à l'école pour que les parents puissent respirer un peu", proposer: user1, secondary_category: secondary_category1 )
-proposal9 = Proposal.create!( name: "Cours de math", description: "Prof à la retraite peut aider à faire des exos de math", proposer: user2, secondary_category: secondary_category2 )
+proposal6 = Proposal.create!( name: "Aide à la lecture", description: "Je peux lire des histoires à des enfants à l'école pour que les parents puissent respirer un peu", proposer: user1, secondary_category: secondary_category12 )
+proposal9 = Proposal.create!( name: "Cours de math", description: "Prof à la retraite peut aider à faire des exos de math", proposer: user2, secondary_category: secondary_category22 )
 proposal7 = Proposal.create!( name: "Tutos guitare", description: "Si vous souhaitez déchiffrer des tutos avec moi :)", proposer: user2, secondary_category: secondary_category6 )
-proposal16 = Proposal.create!( name: "préparation au brevet", description: "Bonjour, je fais réviser le brevet à mon fils aîné, nous pouvons le réviser avec un autre collégien :)", proposer: user1, secondary_category: secondary_category2  )
-proposal8 = Proposal.create!( name: "Cuisiner ensemble", description: "Si vous en avez marre d'être sseul(e) en cuisine, on peut zoom-cuisiner ensemble ;)!", proposer: user3, secondary_category: secondary_category4)
+proposal16 = Proposal.create!( name: "préparation au brevet", description: "Bonjour, je fais réviser le brevet à mon fils aîné, nous pouvons le réviser avec un autre collégien :)", proposer: user1, secondary_category: secondary_category21  )
+proposal8 = Proposal.create!( name: "Cuisiner ensemble", description: "Si vous en avez marre d'être sseul(e) en cuisine, on peut zoom-cuisiner ensemble ;)!", proposer: user3, secondary_category: secondary_category23)
 proposal_conseil_03 = Proposal.create!( name: name_conseil_03, description: description_conseil_03, proposer: user3, secondary_category: secondary_category9  )
-proposal19 = Proposal.create!( name: "Prépa bac français", description: "Bonjour, je prépare le Capes en lettres, et propose d'aider des lycéens en pleine préparation du bac de français.", proposer: user2, secondary_category: secondary_category3  )
+proposal19 = Proposal.create!( name: "Prépa bac français", description: "Bonjour, je prépare le Capes en lettres, et propose d'aider des lycéens en pleine préparation du bac de français.", proposer: user2, secondary_category: secondary_category31  )
 proposal12 = Proposal.create!( name: "Tiramisu à l'italienne", description: "Je viens de l'italie, j'aime la couisine della nonna", proposer: user1, secondary_category: secondary_category4 )
 proposal10 = Proposal.create!( name: "Do It Yourself", description: "Passionnée de DIY, je peux donner des petits conseils", proposer: user3, secondary_category: secondary_category7 )
 proposal_conseil_04 = Proposal.create!( name: name_conseil_04, description: description_conseil_04, proposer: user1, secondary_category: secondary_category9  )
-proposal15 = Proposal.create!( name: "Devoirs école", description: "N'hésitez pas à me contacter pour aider vos enfants à faire leurs devoirs!", proposer: user4, secondary_category: secondary_category1 )
+proposal15 = Proposal.create!( name: "Devoirs école", description: "N'hésitez pas à me contacter pour aider vos enfants à faire leurs devoirs!", proposer: user4, secondary_category: secondary_category11 )
 proposal_conseil_06 = Proposal.create!( name: name_conseil_06, description: description_conseil_06, proposer: user3, secondary_category: secondary_category10 )
 proposal13 = Proposal.create!( name: "Discussions Espagnol / Français", description: "Hola ! Je vous propose de discuter ensemble 30 minutes en français puis en espagnol", proposer: user1, secondary_category: secondary_category7 )
 
