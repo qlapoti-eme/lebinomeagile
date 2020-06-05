@@ -27,7 +27,8 @@ class ProposalsController < ApplicationController
     authorize @proposal
     if @proposal.save!
       create_slots(@proposal)
-      redirect_to dashboards_path
+      # 
+      redirect_to dashboards_path(newprop: true)
     else
       render 'new'
     end
