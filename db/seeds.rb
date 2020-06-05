@@ -126,8 +126,10 @@ proposal6 = Proposal.create!( name: "Aide à la lecture", description: "Je peux 
 proposal9 = Proposal.create!( name: "Cours de math", description: "Prof à la retraite peut aider à faire des exos de math", proposer: user2, secondary_category: secondary_category22 )
 proposal7 = Proposal.create!( name: "Tutos guitare", description: "Si vous souhaitez déchiffrer des tutos avec moi :)", proposer: user2, secondary_category: secondary_category6 )
 proposal16 = Proposal.create!( name: "préparation au brevet", description: "Bonjour, je fais réviser le brevet à mon fils aîné, nous pouvons le réviser avec un autre collégien :)", proposer: user1, secondary_category: secondary_category21  )
-proposal8 = Proposal.create!( name: "Cuisiner ensemble", description: "Si vous en avez marre d'être sseul(e) en cuisine, on peut zoom-cuisiner ensemble ;)!", proposer: user2, secondary_category: secondary_category23)
+
+proposal8 = Proposal.create!( name: "Cuisiner ensemble", description: "Si vous en avez marre d'être sseul(e) en cuisine, on peut zoom-cuisiner ensemble ;)!", proposer: user2, secondary_category: secondary_category4)
 proposal_conseil_03 = Proposal.create!( name: name_conseil_03, description: description_conseil_03, proposer: user1, secondary_category: secondary_category9  )
+
 proposal19 = Proposal.create!( name: "Prépa bac français", description: "Bonjour, je prépare le Capes en lettres, et propose d'aider des lycéens en pleine préparation du bac de français.", proposer: user2, secondary_category: secondary_category31  )
 proposal12 = Proposal.create!( name: "Tiramisu à l'italienne", description: "Je viens de l'italie, j'aime la couisine della nonna", proposer: user1, secondary_category: secondary_category4 )
 proposal10 = Proposal.create!( name: "Do It Yourself", description: "Passionnée de DIY, je peux donner des petits conseils", proposer: user1, secondary_category: secondary_category7 )
