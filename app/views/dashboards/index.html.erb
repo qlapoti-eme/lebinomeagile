@@ -41,7 +41,7 @@
                   </p>
                 </div>
                 <div class="card-dashboard-infos">
-                  <p id="date-time"> <i class="far fa-clock icon-grey"></i><%= booking.start_time.strftime("%d %b à %R") %>h
+                  <p id="date-time"> <i class="far fa-clock icon-grey"></i><%= booking.start_time.strftime("%d %b à %R") %>
                   <p><i class="far fa-user-circle icon-grey"></i><%= booking.proposer.email %></p>
                 </div>
 
@@ -81,7 +81,7 @@
                   </p>
                 </div>
                 <div class="card-dashboard-infos">
-                  <p id="date-time"> <i class="far fa-clock icon-grey"></i><%= proposal.slots.first.start_time.strftime("%d %b à %R")%>h
+                  <p id="date-time"> <i class="far fa-clock icon-grey"></i><%= proposal.slots.first.start_time.strftime("%d %b à %R")%>
                 </div>
 
                   <% if proposal.booking.present? %>
