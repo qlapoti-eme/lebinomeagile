@@ -1,4 +1,4 @@
 meta_product_name: "Les Binômes"
 meta_title: "Les Binômes Rester solidaire en temps de distanciation sociale"
 meta_description: "La distanciation sociale ne devrait pas être un frein à l'entraide. Vous avez besoin d'un coup de pouce? Tout peut se faire à distance!"
-meta_image: "banniere_home.jpg" # should exist in `app/assets/images/`
+meta_image: "banniere_home_og.jpg" # should exist in `app/assets/images/`
