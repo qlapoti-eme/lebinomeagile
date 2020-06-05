@@ -27,7 +27,7 @@ puts "Creating users..."
 user1 = User.create!( email: "emarie1@gmail.com", password: '123456')
 user2 = User.create!( email: "yoann@gmail.com", password: 'azerty')
 user3 = User.create!( email: "fred@gmail.com", password: 'azerty')
-user4 = User.create!( email: "demo@gmail.com" , password: 'azerty')
+user4 = User.create!( email: "emmanuel@gmail.com" , password: 'azerty')
 
 puts "Creating Primary Categories..."
 img1 = "soutien_scolaire.jpg"
