@@ -65,7 +65,8 @@ class ProposalsController < ApplicationController
     all_dates = proposal_params[:dates].split(',')
     sslot = proposal_params[:start_slot].split(':').first.to_i
     eslot = proposal_params[:end_slot].split(':').first.to_i
-    range_slot = (sslot..eslot-1  )
+    eslot == sslot ? range_slot = (sslot..sslot+1) : range_slot = (sslot..eslot-1 )
+    
     all_dates.each do |date|
         range_slot.each do |slot|
           Slot.create!(start_time: DateTime.parse("#{date} #{slot}"), proposal: proposal)
