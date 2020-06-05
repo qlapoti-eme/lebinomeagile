@@ -158,7 +158,7 @@ slot13 = Slot.create!( proposal: proposal1, start_time: DateTime.strptime("06/02
 
 slot22 = Slot.create!( proposal: proposal2, start_time: DateTime.strptime("06/03/2020 9:00", "%m/%d/%Y %H:%M"))
 slot21 = Slot.create!( proposal: proposal2, start_time: DateTime.strptime("06/03/2020 8:00", "%m/%d/%Y %H:%M"))
-proposal2_StarTime1 = "06/03/2020 10:00"
+proposal2_StarTime1 = "06/05/2020 17:30"
 slot23 = Slot.create!( proposal: proposal2, start_time: DateTime.strptime(proposal2_StarTime1, "%m/%d/%Y %H:%M"))
 
 proposal3_StarTime1 = "06/04/2020 9:00"
@@ -205,7 +205,7 @@ Slot.create!( proposal: proposal14, start_time: DateTime.strptime("06/16/2020 11
 Slot.create!( proposal: proposal14, start_time: DateTime.strptime("06/16/2020 12:00", "%m/%d/%Y %H:%M"))
 
 
-Slot.create!( proposal: proposal15, start_time: DateTime.strptime("06/17/2020 10:00", "%m/%d/%Y %H:%M"))
+Slot.create!( proposal: proposal15, start_time: DateTime.strptime("06/05/2020 17:30", "%m/%d/%Y %H:%M"))
 Slot.create!( proposal: proposal16, start_time: DateTime.strptime("06/18/2020 10:00", "%m/%d/%Y %H:%M"))
 Slot.create!( proposal: proposal17, start_time: DateTime.strptime("06/19/2020 10:00", "%m/%d/%Y %H:%M"))
 Slot.create!( proposal: proposal18, start_time: DateTime.strptime("06/20/2020 10:00", "%m/%d/%Y %H:%M"))
