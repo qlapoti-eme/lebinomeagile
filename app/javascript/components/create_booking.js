@@ -1,21 +1,6 @@
 
-// const toggleInput = (event) => {
-//   console.log(event.target.parentNode.parentNode)
-//
-//   start_time.value = event.target.value
-//   console.log(start_time);
-// }
-
-// const initFormBooking = () => {
-//   const slot = document.querySelector('.slots_start_time');
-//   console.log(slot)
-//   if (slot){
-//     slot.addEventListener("change", toggleInput)
-//   }
-// }
-const slots = document.querySelectorAll('.slot');
-
 const toggleSlot = (event) => {
+  const slots = document.querySelectorAll('.slot');
   slots.forEach(slot => {
     slot.style.backgroundColor = "#B31B34";
   })
@@ -28,11 +13,14 @@ const toggleSlot = (event) => {
 
 
 const bindSlot = (slot) => {
+  console.log("hello2");
   slot.addEventListener("click", toggleSlot);
 }
 
 
 const initFormBooking = () => {
+  console.log("hello1");
+  const slots = document.querySelectorAll('.slot');
   slots.forEach(bindSlot)
 }
 
