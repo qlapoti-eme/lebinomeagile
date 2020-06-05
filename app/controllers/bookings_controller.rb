@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
     authorize @booking
     if @booking.save!
       flash[:notice] = "Booking done !"
-      redirect_to dashboards_path
+      redirect_to dashboards_path(resa: true)
     else
       render :new
     end
@@ -35,7 +35,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     authorize @booking
     @booking.destroy
-    redirect_to dashboards_path
+    redirect_to dashboards_path(resa: true)
   end
 
   private

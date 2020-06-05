@@ -39,7 +39,7 @@ class ProposalsController < ApplicationController
     if @proposal.update(proposal_params)
       redirect_to root_path
     else
-      redirect_to dashboards_path
+      redirect_to dashboards_path(newprop: true)
     end
 
   end
@@ -47,7 +47,7 @@ class ProposalsController < ApplicationController
   def destroy
     authorize @proposal
     @proposal.destroy
-    redirect_to dashboards_path
+    redirect_to dashboards_path(newprop: true)
   end
 
 
